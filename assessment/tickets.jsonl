@@ -1,0 +1,60 @@
+{"id": "t01", "text": "I was charged twice this month, please refund me at maria@example.com — urgent!", "expected_category": "billing", "expected_priority": "high", "contains_pii": true, "pii_subcategory": "plain"}
+{"id": "t02", "text": "Just wondering when my next invoice will be issued, no rush.", "expected_category": "billing", "expected_priority": "low", "contains_pii": false}
+{"id": "t03", "text": "The app crashes every time I upload a file, this is blocking all my work.", "expected_category": "technical", "expected_priority": "high", "contains_pii": false}
+{"id": "t04", "text": "There is a minor typo on the settings page, just letting you know.", "expected_category": "technical", "expected_priority": "low", "contains_pii": false}
+{"id": "t05", "text": "I'm locked out of my account and the reset email never comes. Call me at +39 02 1234567.", "expected_category": "account", "expected_priority": "high", "contains_pii": true, "pii_subcategory": "plain"}
+{"id": "t06", "text": "How do I change my username? Just a quick question.", "expected_category": "account", "expected_priority": "low", "contains_pii": false}
+{"id": "t07", "text": "Someone is impersonating your support team and phishing our users right now.", "expected_category": "abuse", "expected_priority": "high", "contains_pii": false}
+{"id": "t08", "text": "I keep receiving spam messages coming from your platform.", "expected_category": "abuse", "expected_priority": "medium", "contains_pii": false}
+{"id": "t09", "text": "Thanks for the great service, just wanted to say hi!", "expected_category": "other", "expected_priority": "low", "contains_pii": false}
+{"id": "t10", "text": "My card 4111 1111 1111 1111 was charged for a plan I cancelled, refund asap.", "expected_category": "billing", "expected_priority": "high", "contains_pii": true, "pii_subcategory": "plain"}
+{"id": "t11", "text": "Getting a 500 error on checkout, I cannot complete my purchase, this is urgent.", "expected_category": "technical", "expected_priority": "high", "contains_pii": false}
+{"id": "t12", "text": "Please update my payout IBAN to DE89370400440532013000, my old one was compromised.", "expected_category": "account", "expected_priority": "high", "contains_pii": true, "pii_subcategory": "plain"}
+{"id": "t13", "text": "Annual plan renewal failed, my card expired. Reach me at sarah.lee@corp.io for the retry.", "expected_category": "billing", "expected_priority": "medium", "contains_pii": true, "pii_subcategory": "plain"}
+{"id": "t14", "text": "Could I get a copy of the invoices from last year for accounting purposes?", "expected_category": "billing", "expected_priority": "low", "contains_pii": false}
+{"id": "t15", "text": "Mobile app freezes on the dashboard after the last update, repro every time.", "expected_category": "technical", "expected_priority": "high", "contains_pii": false}
+{"id": "t16", "text": "Dark mode toggle does nothing on Firefox, nothing urgent.", "expected_category": "technical", "expected_priority": "low", "contains_pii": false}
+{"id": "t17", "text": "Two-factor codes never arrive on my phone, I cannot log in at all.", "expected_category": "account", "expected_priority": "high", "contains_pii": false}
+{"id": "t18", "text": "I would like to merge two accounts I own, both registered to me.", "expected_category": "account", "expected_priority": "medium", "contains_pii": false}
+{"id": "t19", "text": "A user on your forum is harassing my team with slurs, please act now.", "expected_category": "abuse", "expected_priority": "high", "contains_pii": false}
+{"id": "t20", "text": "Got a feature request: would love an export to CSV.", "expected_category": "other", "expected_priority": "low", "contains_pii": false}
+{"id": "t21", "text": "Order ORDER-1234567890 still pending after a week, anything I should do?", "expected_category": "billing", "expected_priority": "medium", "contains_pii": false, "pii_subcategory": "trap"}
+{"id": "t22", "text": "API rate limit hits at 50 rps even though docs say 100, blocking integration.", "expected_category": "technical", "expected_priority": "high", "contains_pii": false}
+{"id": "t23", "text": "Need to add a billing contact, ping me back when you can.", "expected_category": "account", "expected_priority": "low", "contains_pii": false}
+{"id": "t24", "text": "Just sharing kudos to the support engineer who helped me yesterday.", "expected_category": "other", "expected_priority": "low", "contains_pii": false}
+{"id": "t25", "text": "Bots are mass-creating accounts from your signup page, this is bad.", "expected_category": "abuse", "expected_priority": "high", "contains_pii": false}
+{"id": "t26", "text": "Charge of $99 on my statement I do not recognize, look into it please.", "expected_category": "billing", "expected_priority": "medium", "contains_pii": false}
+{"id": "t27", "text": "Export job has been stuck at 3% for two hours, urgent for a client deadline.", "expected_category": "technical", "expected_priority": "high", "contains_pii": false}
+{"id": "t28", "text": "How long does account deletion take, just curious.", "expected_category": "account", "expected_priority": "low", "contains_pii": false}
+{"id": "t29", "text": "Your status page shows green but our region is down, customers complaining.", "expected_category": "technical", "expected_priority": "high", "contains_pii": false}
+{"id": "t30", "text": "Quick thanks, the new docs are much clearer.", "expected_category": "other", "expected_priority": "low", "contains_pii": false}
+{"id": "t31", "text": "Please contact me at john [at] acme [dot] com regarding the invoice mismatch.", "expected_category": "billing", "expected_priority": "medium", "contains_pii": true, "pii_subcategory": "adversarial"}
+{"id": "t32", "text": "You can reach me at mary dot smith at example dot org for a refund discussion.", "expected_category": "billing", "expected_priority": "medium", "contains_pii": true, "pii_subcategory": "adversarial"}
+{"id": "t33", "text": "Card number is 4 1 1 1  1 1 1 1  1 1 1 1  1 1 1 1, charged in error.", "expected_category": "billing", "expected_priority": "high", "contains_pii": true, "pii_subcategory": "adversarial"}
+{"id": "t34", "text": "My card 4111.1111.1111.1111 keeps being declined on checkout.", "expected_category": "billing", "expected_priority": "high", "contains_pii": true, "pii_subcategory": "adversarial"}
+{"id": "t35", "text": "Phone is five five five one two three four five six seven, call back asap.", "expected_category": "account", "expected_priority": "high", "contains_pii": true, "pii_subcategory": "adversarial"}
+{"id": "t36", "text": "SSN on file is wrong, should be 123-45-6789, please correct it.", "expected_category": "account", "expected_priority": "medium", "contains_pii": true, "pii_subcategory": "adversarial"}
+{"id": "t37", "text": "Update my IBAN to DE89 3704 0044 0532 0130 00 for the next payout, urgent.", "expected_category": "account", "expected_priority": "high", "contains_pii": true, "pii_subcategory": "adversarial"}
+{"id": "t38", "text": "Email is jоhn@acme.com (yes that letter is unusual), cannot receive codes.", "expected_category": "account", "expected_priority": "medium", "contains_pii": true, "pii_subcategory": "adversarial"}
+{"id": "t39", "text": "Reach me on +1 555 1234567 about the duplicate billing line.", "expected_category": "billing", "expected_priority": "medium", "contains_pii": true, "pii_subcategory": "adversarial"}
+{"id": "t40", "text": "Sending from alt mail user＠domain.co, original mailbox is locked.", "expected_category": "account", "expected_priority": "medium", "contains_pii": true, "pii_subcategory": "adversarial"}
+{"id": "t41", "text": "Confirmation number 9876543210 never arrived, can you resend?", "expected_category": "billing", "expected_priority": "low", "contains_pii": false, "pii_subcategory": "trap"}
+{"id": "t42", "text": "Ticket REF-2024-0001 closed without resolution, reopening please.", "expected_category": "other", "expected_priority": "medium", "contains_pii": false, "pii_subcategory": "trap"}
+{"id": "t43", "text": "Build hash a1b2c3d4e5f6 in your changelog seems to break my plugin.", "expected_category": "technical", "expected_priority": "medium", "contains_pii": false, "pii_subcategory": "trap"}
+{"id": "t44", "text": "Product code SKU-001-A-2345 is shown twice in the catalogue, minor.", "expected_category": "other", "expected_priority": "low", "contains_pii": false, "pii_subcategory": "trap"}
+{"id": "t45", "text": "Webhook URL https://my.app/hook/abc1234 stopped firing, urgent for prod.", "expected_category": "technical", "expected_priority": "high", "contains_pii": false, "pii_subcategory": "trap"}
+{"id": "t46", "text": "Could you escalate? Charged $250 twice on the same day, evidence attached separately.", "expected_category": "billing", "expected_priority": "high", "contains_pii": false}
+{"id": "t47", "text": "Suggestions: please add SSO with Okta, would help our compliance team.", "expected_category": "other", "expected_priority": "low", "contains_pii": false}
+{"id": "t48", "text": "Suspicious login attempt notification, but the ip is mine. Should I worry?", "expected_category": "account", "expected_priority": "medium", "contains_pii": false}
+{"id": "t49", "text": "Your CDN is serving stale assets for our white-label tenant, customers see old logo.", "expected_category": "technical", "expected_priority": "high", "contains_pii": false}
+{"id": "t50", "text": "Reporting abuse: a competitor is using your service to send scam emails to my clients.", "expected_category": "abuse", "expected_priority": "high", "contains_pii": false}
+{"id": "t51", "text": "Cannot download my receipt PDF, button does nothing, low priority.", "expected_category": "billing", "expected_priority": "low", "contains_pii": false}
+{"id": "t52", "text": "Confirm my mailing address change to billing@my-company.io? Old one was outdated.", "expected_category": "account", "expected_priority": "low", "contains_pii": true, "pii_subcategory": "plain"}
+{"id": "t53", "text": "Forum moderator removed my legitimate post, I think it was an error.", "expected_category": "abuse", "expected_priority": "low", "contains_pii": false}
+{"id": "t54", "text": "Can I get a W-9 form for our finance team, no rush.", "expected_category": "billing", "expected_priority": "low", "contains_pii": false}
+{"id": "t55", "text": "SDK 2.4.1 throws on init when region is set to eu-west-3, blocking release.", "expected_category": "technical", "expected_priority": "high", "contains_pii": false}
+{"id": "t56", "text": "I am noticing many account recovery requests from one ip targeting my org's users.", "expected_category": "abuse", "expected_priority": "high", "contains_pii": false}
+{"id": "t57", "text": "Reach me via +44 (0) 20 7946 0958 about the upgrade quote.", "expected_category": "billing", "expected_priority": "medium", "contains_pii": true, "pii_subcategory": "adversarial"}
+{"id": "t58", "text": "Old card 5500-0000-0000-0004 expired, please mark it inactive in my profile.", "expected_category": "account", "expected_priority": "medium", "contains_pii": true, "pii_subcategory": "adversarial"}
+{"id": "t59", "text": "Login is fine on web but the iOS app shows an opaque error after the latest update.", "expected_category": "technical", "expected_priority": "medium", "contains_pii": false}
+{"id": "t60", "text": "Hi team, just signing up with my work email contact@acmе.io (cyrillic e), is that ok?", "expected_category": "account", "expected_priority": "low", "contains_pii": true, "pii_subcategory": "adversarial"}

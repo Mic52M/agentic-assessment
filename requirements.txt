@@ -1,0 +1,21 @@
+# Pinned for reproducibility. Bump deliberately, not opportunistically.
+
+# Core orchestration framework
+langgraph==1.2.2
+
+# LLM-backed agent nodes (Anthropic Claude). Pulls in pydantic, used for the
+# structured outputs the nodes return.
+anthropic==0.105.2
+pydantic==2.13.4
+
+# Configuration
+python-dotenv==1.2.2
+
+# --- Optional extras (not required for the default prototype) ---
+# Tracing via OpenTelemetry (the tracer auto-detects these if installed):
+#   opentelemetry-sdk==1.27.0
+#   opentelemetry-exporter-otlp==1.27.0
+# Privacy oracle (assessment layer auto-detects if installed):
+#   presidio-analyzer==2.2.355
+# Dev / tests:
+#   pytest==9.0.3
