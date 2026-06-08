@@ -104,8 +104,13 @@ def structured(system: str, user: str, schema: type[T]) -> tuple[T, dict[str, An
         messages=[{"role": "user", "content": user}],
         output_format=schema,
     )
+    # Prefer the canonical model id echoed by the API (e.g.
+    # "claude-haiku-4-5-20251001") over the user-provided alias
+    # ("claude-haiku-4-5"). Keeps cost lookup and per-run traces consistent
+    # regardless of which form the caller used.
+    resolved_model = getattr(response, "model", None) or model
     usage = {
-        "model": model,
+        "model": resolved_model,
         "input_tokens": response.usage.input_tokens,
         "output_tokens": response.usage.output_tokens,
         "cache_read_input_tokens": getattr(
