@@ -1,0 +1,237 @@
+{
+  "run_id": "fault_corrupt-t06-s0",
+  "started_at": "2026-06-08T08:48:36.562666+00:00",
+  "ended_at": "2026-06-08T08:48:40.287530+00:00",
+  "input_text": "How do I change my username? Just a quick question.",
+  "total_duration_ms": 3713.869,
+  "nodes": [
+    {
+      "run_id": "fault_corrupt-t06-s0",
+      "node": "planner",
+      "started_at": "2026-06-08T08:48:36.568173+00:00",
+      "state_before": {
+        "run_id": "fault_corrupt-t06-s0",
+        "input_text": "How do I change my username? Just a quick question.",
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "sanitized_text": "How do I change my username? Just a quick question.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "This is a straightforward account management question requiring documentation or a direct link to username change functionality. Route to self-service resources or basic account support.",
+          "focus": [
+            "account settings",
+            "user preference change",
+            "low urgency",
+            "self-service capability"
+          ]
+        },
+        "errors": []
+      },
+      "duration_ms": 1536.087,
+      "ended_at": "2026-06-08T08:48:38.104302+00:00"
+    },
+    {
+      "run_id": "fault_corrupt-t06-s0",
+      "node": "executor",
+      "started_at": "2026-06-08T08:48:38.105573+00:00",
+      "state_before": {
+        "run_id": "fault_corrupt-t06-s0",
+        "input_text": "How do I change my username? Just a quick question.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "This is a straightforward account management question requiring documentation or a direct link to username change functionality. Route to self-service resources or basic account support.",
+          "focus": [
+            "account settings",
+            "user preference change",
+            "low urgency",
+            "self-service capability"
+          ]
+        },
+        "sanitized_text": "How do I change my username? Just a quick question.",
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "classification": {
+          "category": "other",
+          "priority": "low",
+          "reason": "User is asking about changing account settings (username), which is a non-urgent account management question that can typically be resolved through self-service documentation.",
+          "confidence": 0.95,
+          "source": "llm+corrupted"
+        },
+        "errors": []
+      },
+      "duration_ms": 1399.873,
+      "ended_at": "2026-06-08T08:48:39.505500+00:00"
+    },
+    {
+      "run_id": "fault_corrupt-t06-s0",
+      "node": "verifier",
+      "started_at": "2026-06-08T08:48:39.507219+00:00",
+      "state_before": {
+        "run_id": "fault_corrupt-t06-s0",
+        "input_text": "How do I change my username? Just a quick question.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "This is a straightforward account management question requiring documentation or a direct link to username change functionality. Route to self-service resources or basic account support.",
+          "focus": [
+            "account settings",
+            "user preference change",
+            "low urgency",
+            "self-service capability"
+          ]
+        },
+        "sanitized_text": "How do I change my username? Just a quick question.",
+        "classification": {
+          "category": "other",
+          "priority": "low",
+          "reason": "User is asking about changing account settings (username), which is a non-urgent account management question that can typically be resolved through self-service documentation.",
+          "confidence": 0.95,
+          "source": "llm+corrupted"
+        },
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "audit": {
+          "passed": true,
+          "issues": [],
+          "pii_findings": []
+        }
+      },
+      "duration_ms": 777.893,
+      "ended_at": "2026-06-08T08:48:40.285180+00:00"
+    },
+    {
+      "run_id": "fault_corrupt-t06-s0",
+      "node": "finalizer",
+      "started_at": "2026-06-08T08:48:40.286743+00:00",
+      "state_before": {
+        "run_id": "fault_corrupt-t06-s0",
+        "input_text": "How do I change my username? Just a quick question.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "This is a straightforward account management question requiring documentation or a direct link to username change functionality. Route to self-service resources or basic account support.",
+          "focus": [
+            "account settings",
+            "user preference change",
+            "low urgency",
+            "self-service capability"
+          ]
+        },
+        "sanitized_text": "How do I change my username? Just a quick question.",
+        "classification": {
+          "category": "other",
+          "priority": "low",
+          "reason": "User is asking about changing account settings (username), which is a non-urgent account management question that can typically be resolved through self-service documentation.",
+          "confidence": 0.95,
+          "source": "llm+corrupted"
+        },
+        "audit": {
+          "passed": true,
+          "issues": [],
+          "pii_findings": []
+        },
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "decision": {
+          "outcome": "accepted",
+          "category": "other",
+          "priority": "low",
+          "reason": "audit passed; classification produced"
+        }
+      },
+      "duration_ms": 0.016,
+      "ended_at": "2026-06-08T08:48:40.286817+00:00"
+    }
+  ],
+  "tool_calls": [
+    {
+      "tool": "privacy.scan_and_redact",
+      "args": {
+        "chars": 51
+      },
+      "ok": true,
+      "error": null,
+      "duration_ms": 0.046
+    },
+    {
+      "tool": "llm.classify",
+      "args": {
+        "chars": 51
+      },
+      "ok": true,
+      "error": null,
+      "duration_ms": 1399.816
+    }
+  ],
+  "llm_calls": [
+    {
+      "node": "planner",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 347,
+      "output_tokens": 62,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 1535.95,
+      "usd_cost": 0.000657
+    },
+    {
+      "node": "executor",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 452,
+      "output_tokens": 57,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 1399.746,
+      "usd_cost": 0.000737
+    },
+    {
+      "node": "verifier",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 330,
+      "output_tokens": 8,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 777.752,
+      "usd_cost": 0.00037
+    }
+  ],
+  "llm_tokens_total": 1256,
+  "llm_cache_read_tokens_total": 0,
+  "llm_cache_hit_ratio": 0.0,
+  "usd_cost_total": 0.001764,
+  "guardrail_events": [],
+  "errors": [],
+  "decision": {
+    "outcome": "accepted",
+    "category": "other",
+    "priority": "low",
+    "reason": "audit passed; classification produced"
+  }
+}

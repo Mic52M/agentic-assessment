@@ -1,0 +1,237 @@
+{
+  "run_id": "baseline-t09-s0",
+  "started_at": "2026-06-08T08:50:03.371723+00:00",
+  "ended_at": "2026-06-08T08:50:07.836890+00:00",
+  "input_text": "Thanks for the great service, just wanted to say hi!",
+  "total_duration_ms": 4453.402,
+  "nodes": [
+    {
+      "run_id": "baseline-t09-s0",
+      "node": "planner",
+      "started_at": "2026-06-08T08:50:03.378022+00:00",
+      "state_before": {
+        "run_id": "baseline-t09-s0",
+        "input_text": "Thanks for the great service, just wanted to say hi!",
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "sanitized_text": "Thanks for the great service, just wanted to say hi!",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "This is a positive feedback message with no support issue to resolve. Route to acknowledgment team or archive as customer appreciation.",
+          "focus": [
+            "No problem reported",
+            "Positive sentiment",
+            "No action required",
+            "Low priority"
+          ]
+        },
+        "errors": []
+      },
+      "duration_ms": 2066.901,
+      "ended_at": "2026-06-08T08:50:05.444979+00:00"
+    },
+    {
+      "run_id": "baseline-t09-s0",
+      "node": "executor",
+      "started_at": "2026-06-08T08:50:05.446533+00:00",
+      "state_before": {
+        "run_id": "baseline-t09-s0",
+        "input_text": "Thanks for the great service, just wanted to say hi!",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "This is a positive feedback message with no support issue to resolve. Route to acknowledgment team or archive as customer appreciation.",
+          "focus": [
+            "No problem reported",
+            "Positive sentiment",
+            "No action required",
+            "Low priority"
+          ]
+        },
+        "sanitized_text": "Thanks for the great service, just wanted to say hi!",
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "classification": {
+          "category": "other",
+          "priority": "low",
+          "reason": "Customer is expressing gratitude with no issue reported or action required.",
+          "confidence": 0.95,
+          "source": "llm"
+        },
+        "errors": []
+      },
+      "duration_ms": 1226.01,
+      "ended_at": "2026-06-08T08:50:06.672599+00:00"
+    },
+    {
+      "run_id": "baseline-t09-s0",
+      "node": "verifier",
+      "started_at": "2026-06-08T08:50:06.674235+00:00",
+      "state_before": {
+        "run_id": "baseline-t09-s0",
+        "input_text": "Thanks for the great service, just wanted to say hi!",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "This is a positive feedback message with no support issue to resolve. Route to acknowledgment team or archive as customer appreciation.",
+          "focus": [
+            "No problem reported",
+            "Positive sentiment",
+            "No action required",
+            "Low priority"
+          ]
+        },
+        "sanitized_text": "Thanks for the great service, just wanted to say hi!",
+        "classification": {
+          "category": "other",
+          "priority": "low",
+          "reason": "Customer is expressing gratitude with no issue reported or action required.",
+          "confidence": 0.95,
+          "source": "llm"
+        },
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "audit": {
+          "passed": true,
+          "issues": [],
+          "pii_findings": []
+        }
+      },
+      "duration_ms": 1160.476,
+      "ended_at": "2026-06-08T08:50:07.834795+00:00"
+    },
+    {
+      "run_id": "baseline-t09-s0",
+      "node": "finalizer",
+      "started_at": "2026-06-08T08:50:07.836198+00:00",
+      "state_before": {
+        "run_id": "baseline-t09-s0",
+        "input_text": "Thanks for the great service, just wanted to say hi!",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "This is a positive feedback message with no support issue to resolve. Route to acknowledgment team or archive as customer appreciation.",
+          "focus": [
+            "No problem reported",
+            "Positive sentiment",
+            "No action required",
+            "Low priority"
+          ]
+        },
+        "sanitized_text": "Thanks for the great service, just wanted to say hi!",
+        "classification": {
+          "category": "other",
+          "priority": "low",
+          "reason": "Customer is expressing gratitude with no issue reported or action required.",
+          "confidence": 0.95,
+          "source": "llm"
+        },
+        "audit": {
+          "passed": true,
+          "issues": [],
+          "pii_findings": []
+        },
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "decision": {
+          "outcome": "accepted",
+          "category": "other",
+          "priority": "low",
+          "reason": "audit passed; classification produced"
+        }
+      },
+      "duration_ms": 0.015,
+      "ended_at": "2026-06-08T08:50:07.836265+00:00"
+    }
+  ],
+  "tool_calls": [
+    {
+      "tool": "privacy.scan_and_redact",
+      "args": {
+        "chars": 52
+      },
+      "ok": true,
+      "error": null,
+      "duration_ms": 0.047
+    },
+    {
+      "tool": "llm.classify",
+      "args": {
+        "chars": 52
+      },
+      "ok": true,
+      "error": null,
+      "duration_ms": 1225.962
+    }
+  ],
+  "llm_calls": [
+    {
+      "node": "planner",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 347,
+      "output_tokens": 55,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 2066.732,
+      "usd_cost": 0.000622
+    },
+    {
+      "node": "executor",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 451,
+      "output_tokens": 40,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 1225.916,
+      "usd_cost": 0.000651
+    },
+    {
+      "node": "verifier",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 330,
+      "output_tokens": 8,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 1160.337,
+      "usd_cost": 0.00037
+    }
+  ],
+  "llm_tokens_total": 1231,
+  "llm_cache_read_tokens_total": 0,
+  "llm_cache_hit_ratio": 0.0,
+  "usd_cost_total": 0.001643,
+  "guardrail_events": [],
+  "errors": [],
+  "decision": {
+    "outcome": "accepted",
+    "category": "other",
+    "priority": "low",
+    "reason": "audit passed; classification produced"
+  }
+}

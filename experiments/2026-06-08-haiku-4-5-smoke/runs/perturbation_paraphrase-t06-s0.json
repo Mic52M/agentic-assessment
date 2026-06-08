@@ -1,0 +1,237 @@
+{
+  "run_id": "perturbation_paraphrase-t06-s0",
+  "started_at": "2026-06-08T08:48:16.795909+00:00",
+  "ended_at": "2026-06-08T08:48:21.713084+00:00",
+  "input_text": "What's the process for updating my account username? This is a straightforward inquiry.",
+  "total_duration_ms": 4906.989,
+  "nodes": [
+    {
+      "run_id": "perturbation_paraphrase-t06-s0",
+      "node": "planner",
+      "started_at": "2026-06-08T08:48:16.801268+00:00",
+      "state_before": {
+        "run_id": "perturbation_paraphrase-t06-s0",
+        "input_text": "What's the process for updating my account username? This is a straightforward inquiry.",
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "sanitized_text": "What's the process for updating my account username? This is a straightforward inquiry.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "This is a standard account management request asking for procedural information. Route to self-service documentation or a support agent to explain the username update process.",
+          "focus": [
+            "account management",
+            "procedural inquiry",
+            "no urgency",
+            "informational request"
+          ]
+        },
+        "errors": []
+      },
+      "duration_ms": 1708.688,
+      "ended_at": "2026-06-08T08:48:18.510001+00:00"
+    },
+    {
+      "run_id": "perturbation_paraphrase-t06-s0",
+      "node": "executor",
+      "started_at": "2026-06-08T08:48:18.511400+00:00",
+      "state_before": {
+        "run_id": "perturbation_paraphrase-t06-s0",
+        "input_text": "What's the process for updating my account username? This is a straightforward inquiry.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "This is a standard account management request asking for procedural information. Route to self-service documentation or a support agent to explain the username update process.",
+          "focus": [
+            "account management",
+            "procedural inquiry",
+            "no urgency",
+            "informational request"
+          ]
+        },
+        "sanitized_text": "What's the process for updating my account username? This is a straightforward inquiry.",
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "classification": {
+          "category": "account",
+          "priority": "low",
+          "reason": "The user is asking a procedural question about updating their username, which is a standard account management request with no time-sensitive issue.",
+          "confidence": 0.95,
+          "source": "llm"
+        },
+        "errors": []
+      },
+      "duration_ms": 1562.566,
+      "ended_at": "2026-06-08T08:48:20.074025+00:00"
+    },
+    {
+      "run_id": "perturbation_paraphrase-t06-s0",
+      "node": "verifier",
+      "started_at": "2026-06-08T08:48:20.075565+00:00",
+      "state_before": {
+        "run_id": "perturbation_paraphrase-t06-s0",
+        "input_text": "What's the process for updating my account username? This is a straightforward inquiry.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "This is a standard account management request asking for procedural information. Route to self-service documentation or a support agent to explain the username update process.",
+          "focus": [
+            "account management",
+            "procedural inquiry",
+            "no urgency",
+            "informational request"
+          ]
+        },
+        "sanitized_text": "What's the process for updating my account username? This is a straightforward inquiry.",
+        "classification": {
+          "category": "account",
+          "priority": "low",
+          "reason": "The user is asking a procedural question about updating their username, which is a standard account management request with no time-sensitive issue.",
+          "confidence": 0.95,
+          "source": "llm"
+        },
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "audit": {
+          "passed": true,
+          "issues": [],
+          "pii_findings": []
+        }
+      },
+      "duration_ms": 1635.723,
+      "ended_at": "2026-06-08T08:48:21.711351+00:00"
+    },
+    {
+      "run_id": "perturbation_paraphrase-t06-s0",
+      "node": "finalizer",
+      "started_at": "2026-06-08T08:48:21.712526+00:00",
+      "state_before": {
+        "run_id": "perturbation_paraphrase-t06-s0",
+        "input_text": "What's the process for updating my account username? This is a straightforward inquiry.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "This is a standard account management request asking for procedural information. Route to self-service documentation or a support agent to explain the username update process.",
+          "focus": [
+            "account management",
+            "procedural inquiry",
+            "no urgency",
+            "informational request"
+          ]
+        },
+        "sanitized_text": "What's the process for updating my account username? This is a straightforward inquiry.",
+        "classification": {
+          "category": "account",
+          "priority": "low",
+          "reason": "The user is asking a procedural question about updating their username, which is a standard account management request with no time-sensitive issue.",
+          "confidence": 0.95,
+          "source": "llm"
+        },
+        "audit": {
+          "passed": true,
+          "issues": [],
+          "pii_findings": []
+        },
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "decision": {
+          "outcome": "accepted",
+          "category": "account",
+          "priority": "low",
+          "reason": "audit passed; classification produced"
+        }
+      },
+      "duration_ms": 0.012,
+      "ended_at": "2026-06-08T08:48:21.712583+00:00"
+    }
+  ],
+  "tool_calls": [
+    {
+      "tool": "privacy.scan_and_redact",
+      "args": {
+        "chars": 87
+      },
+      "ok": true,
+      "error": null,
+      "duration_ms": 0.05
+    },
+    {
+      "tool": "llm.classify",
+      "args": {
+        "chars": 87
+      },
+      "ok": true,
+      "error": null,
+      "duration_ms": 1562.507
+    }
+  ],
+  "llm_calls": [
+    {
+      "node": "planner",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 352,
+      "output_tokens": 61,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 1708.527,
+      "usd_cost": 0.000657
+    },
+    {
+      "node": "executor",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 456,
+      "output_tokens": 54,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 1562.456,
+      "usd_cost": 0.000726
+    },
+    {
+      "node": "verifier",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 335,
+      "output_tokens": 8,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 1635.591,
+      "usd_cost": 0.000375
+    }
+  ],
+  "llm_tokens_total": 1266,
+  "llm_cache_read_tokens_total": 0,
+  "llm_cache_hit_ratio": 0.0,
+  "usd_cost_total": 0.001758,
+  "guardrail_events": [],
+  "errors": [],
+  "decision": {
+    "outcome": "accepted",
+    "category": "account",
+    "priority": "low",
+    "reason": "audit passed; classification produced"
+  }
+}

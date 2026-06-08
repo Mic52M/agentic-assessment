@@ -1,0 +1,241 @@
+{
+  "run_id": "baseline-t08-s0",
+  "started_at": "2026-06-08T08:49:17.112907+00:00",
+  "ended_at": "2026-06-08T08:49:24.610487+00:00",
+  "input_text": "I keep receiving spam messages coming from your platform.",
+  "total_duration_ms": 7486.235,
+  "nodes": [
+    {
+      "run_id": "baseline-t08-s0",
+      "node": "planner",
+      "started_at": "2026-06-08T08:49:17.118294+00:00",
+      "state_before": {
+        "run_id": "baseline-t08-s0",
+        "input_text": "I keep receiving spam messages coming from your platform.",
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "sanitized_text": "I keep receiving spam messages coming from your platform.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "User is reporting unwanted spam messages originating from the platform. This needs to be routed to the abuse/trust & safety team to investigate the source, verify the claim, and take action to stop the spam and prevent future incidents.",
+          "focus": [
+            "spam/abuse report",
+            "platform integrity issue",
+            "user experiencing unwanted messages",
+            "needs investigation and remediation",
+            "potential account compromise or malicious actor"
+          ]
+        },
+        "errors": []
+      },
+      "duration_ms": 4922.439,
+      "ended_at": "2026-06-08T08:49:22.040824+00:00"
+    },
+    {
+      "run_id": "baseline-t08-s0",
+      "node": "executor",
+      "started_at": "2026-06-08T08:49:22.042557+00:00",
+      "state_before": {
+        "run_id": "baseline-t08-s0",
+        "input_text": "I keep receiving spam messages coming from your platform.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "User is reporting unwanted spam messages originating from the platform. This needs to be routed to the abuse/trust & safety team to investigate the source, verify the claim, and take action to stop the spam and prevent future incidents.",
+          "focus": [
+            "spam/abuse report",
+            "platform integrity issue",
+            "user experiencing unwanted messages",
+            "needs investigation and remediation",
+            "potential account compromise or malicious actor"
+          ]
+        },
+        "sanitized_text": "I keep receiving spam messages coming from your platform.",
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "classification": {
+          "category": "abuse",
+          "priority": "high",
+          "reason": "User is reporting unwanted spam messages which indicates a platform integrity issue that requires urgent investigation and remediation.",
+          "confidence": 0.92,
+          "source": "llm"
+        },
+        "errors": []
+      },
+      "duration_ms": 1415.441,
+      "ended_at": "2026-06-08T08:49:23.458083+00:00"
+    },
+    {
+      "run_id": "baseline-t08-s0",
+      "node": "verifier",
+      "started_at": "2026-06-08T08:49:23.459462+00:00",
+      "state_before": {
+        "run_id": "baseline-t08-s0",
+        "input_text": "I keep receiving spam messages coming from your platform.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "User is reporting unwanted spam messages originating from the platform. This needs to be routed to the abuse/trust & safety team to investigate the source, verify the claim, and take action to stop the spam and prevent future incidents.",
+          "focus": [
+            "spam/abuse report",
+            "platform integrity issue",
+            "user experiencing unwanted messages",
+            "needs investigation and remediation",
+            "potential account compromise or malicious actor"
+          ]
+        },
+        "sanitized_text": "I keep receiving spam messages coming from your platform.",
+        "classification": {
+          "category": "abuse",
+          "priority": "high",
+          "reason": "User is reporting unwanted spam messages which indicates a platform integrity issue that requires urgent investigation and remediation.",
+          "confidence": 0.92,
+          "source": "llm"
+        },
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "audit": {
+          "passed": true,
+          "issues": [],
+          "pii_findings": []
+        }
+      },
+      "duration_ms": 1148.341,
+      "ended_at": "2026-06-08T08:49:24.607863+00:00"
+    },
+    {
+      "run_id": "baseline-t08-s0",
+      "node": "finalizer",
+      "started_at": "2026-06-08T08:49:24.609346+00:00",
+      "state_before": {
+        "run_id": "baseline-t08-s0",
+        "input_text": "I keep receiving spam messages coming from your platform.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "User is reporting unwanted spam messages originating from the platform. This needs to be routed to the abuse/trust & safety team to investigate the source, verify the claim, and take action to stop the spam and prevent future incidents.",
+          "focus": [
+            "spam/abuse report",
+            "platform integrity issue",
+            "user experiencing unwanted messages",
+            "needs investigation and remediation",
+            "potential account compromise or malicious actor"
+          ]
+        },
+        "sanitized_text": "I keep receiving spam messages coming from your platform.",
+        "classification": {
+          "category": "abuse",
+          "priority": "high",
+          "reason": "User is reporting unwanted spam messages which indicates a platform integrity issue that requires urgent investigation and remediation.",
+          "confidence": 0.92,
+          "source": "llm"
+        },
+        "audit": {
+          "passed": true,
+          "issues": [],
+          "pii_findings": []
+        },
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "decision": {
+          "outcome": "accepted",
+          "category": "abuse",
+          "priority": "high",
+          "reason": "audit passed; classification produced"
+        }
+      },
+      "duration_ms": 0.014,
+      "ended_at": "2026-06-08T08:49:24.609413+00:00"
+    }
+  ],
+  "tool_calls": [
+    {
+      "tool": "privacy.scan_and_redact",
+      "args": {
+        "chars": 57
+      },
+      "ok": true,
+      "error": null,
+      "duration_ms": 0.048
+    },
+    {
+      "tool": "llm.classify",
+      "args": {
+        "chars": 57
+      },
+      "ok": true,
+      "error": null,
+      "duration_ms": 1415.373
+    }
+  ],
+  "llm_calls": [
+    {
+      "node": "planner",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 345,
+      "output_tokens": 94,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 4922.288,
+      "usd_cost": 0.000815
+    },
+    {
+      "node": "executor",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 463,
+      "output_tokens": 48,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 1415.315,
+      "usd_cost": 0.000703
+    },
+    {
+      "node": "verifier",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 328,
+      "output_tokens": 8,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 1148.221,
+      "usd_cost": 0.000368
+    }
+  ],
+  "llm_tokens_total": 1286,
+  "llm_cache_read_tokens_total": 0,
+  "llm_cache_hit_ratio": 0.0,
+  "usd_cost_total": 0.001886,
+  "guardrail_events": [],
+  "errors": [],
+  "decision": {
+    "outcome": "accepted",
+    "category": "abuse",
+    "priority": "high",
+    "reason": "audit passed; classification produced"
+  }
+}

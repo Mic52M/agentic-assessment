@@ -1,0 +1,247 @@
+{
+  "run_id": "fault_crash-t05-s0",
+  "started_at": "2026-06-08T08:47:49.151071+00:00",
+  "ended_at": "2026-06-08T08:47:53.961795+00:00",
+  "input_text": "I'm locked out of my account and the reset email never comes. Call me at +39 02 1234567.",
+  "total_duration_ms": 4801.873,
+  "nodes": [
+    {
+      "run_id": "fault_crash-t05-s0",
+      "node": "planner",
+      "started_at": "2026-06-08T08:47:49.155714+00:00",
+      "state_before": {
+        "run_id": "fault_crash-t05-s0",
+        "input_text": "I'm locked out of my account and the reset email never comes. Call me at +39 02 1234567.",
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "sanitized_text": "I'm locked out of my account and the reset email never comes. Call me at [PHONE].",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "Customer cannot access their account and email-based password reset is failing. This is a critical access issue requiring immediate verification and either manual account unlock or alternative authentication method.",
+          "focus": [
+            "account lockout",
+            "password reset failure",
+            "email delivery problem",
+            "authentication blocker",
+            "high urgency - access denied"
+          ]
+        },
+        "errors": []
+      },
+      "duration_ms": 1938.154,
+      "ended_at": "2026-06-08T08:47:51.093913+00:00"
+    },
+    {
+      "run_id": "fault_crash-t05-s0",
+      "node": "executor",
+      "started_at": "2026-06-08T08:47:51.094994+00:00",
+      "state_before": {
+        "run_id": "fault_crash-t05-s0",
+        "input_text": "I'm locked out of my account and the reset email never comes. Call me at +39 02 1234567.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "Customer cannot access their account and email-based password reset is failing. This is a critical access issue requiring immediate verification and either manual account unlock or alternative authentication method.",
+          "focus": [
+            "account lockout",
+            "password reset failure",
+            "email delivery problem",
+            "authentication blocker",
+            "high urgency - access denied"
+          ]
+        },
+        "sanitized_text": "I'm locked out of my account and the reset email never comes. Call me at [PHONE].",
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "classification": {
+          "category": "account",
+          "priority": "high",
+          "reason": "User is locked out of their account with a non-functional password reset, which is a blocking authentication issue preventing access.",
+          "confidence": 0.95,
+          "source": "llm"
+        },
+        "errors": []
+      },
+      "duration_ms": 1943.913,
+      "ended_at": "2026-06-08T08:47:53.038959+00:00"
+    },
+    {
+      "run_id": "fault_crash-t05-s0",
+      "node": "verifier",
+      "started_at": "2026-06-08T08:47:53.040284+00:00",
+      "state_before": {
+        "run_id": "fault_crash-t05-s0",
+        "input_text": "I'm locked out of my account and the reset email never comes. Call me at +39 02 1234567.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "Customer cannot access their account and email-based password reset is failing. This is a critical access issue requiring immediate verification and either manual account unlock or alternative authentication method.",
+          "focus": [
+            "account lockout",
+            "password reset failure",
+            "email delivery problem",
+            "authentication blocker",
+            "high urgency - access denied"
+          ]
+        },
+        "sanitized_text": "I'm locked out of my account and the reset email never comes. Call me at [PHONE].",
+        "classification": {
+          "category": "account",
+          "priority": "high",
+          "reason": "User is locked out of their account with a non-functional password reset, which is a blocking authentication issue preventing access.",
+          "confidence": 0.95,
+          "source": "llm"
+        },
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "audit": {
+          "passed": true,
+          "issues": [],
+          "pii_findings": []
+        }
+      },
+      "duration_ms": 919.792,
+      "ended_at": "2026-06-08T08:47:53.960134+00:00"
+    },
+    {
+      "run_id": "fault_crash-t05-s0",
+      "node": "finalizer",
+      "started_at": "2026-06-08T08:47:53.961243+00:00",
+      "state_before": {
+        "run_id": "fault_crash-t05-s0",
+        "input_text": "I'm locked out of my account and the reset email never comes. Call me at +39 02 1234567.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "Customer cannot access their account and email-based password reset is failing. This is a critical access issue requiring immediate verification and either manual account unlock or alternative authentication method.",
+          "focus": [
+            "account lockout",
+            "password reset failure",
+            "email delivery problem",
+            "authentication blocker",
+            "high urgency - access denied"
+          ]
+        },
+        "sanitized_text": "I'm locked out of my account and the reset email never comes. Call me at [PHONE].",
+        "classification": {
+          "category": "account",
+          "priority": "high",
+          "reason": "User is locked out of their account with a non-functional password reset, which is a blocking authentication issue preventing access.",
+          "confidence": 0.95,
+          "source": "llm"
+        },
+        "audit": {
+          "passed": true,
+          "issues": [],
+          "pii_findings": []
+        },
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "decision": {
+          "outcome": "accepted",
+          "category": "account",
+          "priority": "high",
+          "reason": "audit passed; classification produced"
+        }
+      },
+      "duration_ms": 0.014,
+      "ended_at": "2026-06-08T08:47:53.961310+00:00"
+    }
+  ],
+  "tool_calls": [
+    {
+      "tool": "privacy.scan_and_redact",
+      "args": {
+        "chars": 88
+      },
+      "ok": true,
+      "error": null,
+      "duration_ms": 0.069
+    },
+    {
+      "tool": "llm.classify",
+      "args": {
+        "chars": 81
+      },
+      "ok": true,
+      "error": null,
+      "duration_ms": 1943.86
+    }
+  ],
+  "llm_calls": [
+    {
+      "node": "planner",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 356,
+      "output_tokens": 73,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 1937.976,
+      "usd_cost": 0.000721
+    },
+    {
+      "node": "executor",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 468,
+      "output_tokens": 51,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 1943.81,
+      "usd_cost": 0.000723
+    },
+    {
+      "node": "verifier",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 339,
+      "output_tokens": 8,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 919.668,
+      "usd_cost": 0.000379
+    }
+  ],
+  "llm_tokens_total": 1295,
+  "llm_cache_read_tokens_total": 0,
+  "llm_cache_hit_ratio": 0.0,
+  "usd_cost_total": 0.001823,
+  "guardrail_events": [
+    {
+      "node": "planner",
+      "kind": "pii_redaction",
+      "detail": "redacted 1 item(s): phone"
+    }
+  ],
+  "errors": [],
+  "decision": {
+    "outcome": "accepted",
+    "category": "account",
+    "priority": "high",
+    "reason": "audit passed; classification produced"
+  }
+}

@@ -1,0 +1,253 @@
+{
+  "run_id": "fault_corrupt-t05-s0",
+  "started_at": "2026-06-08T08:48:01.541668+00:00",
+  "ended_at": "2026-06-08T08:48:06.560263+00:00",
+  "input_text": "I'm locked out of my account and the reset email never comes. Call me at +39 02 1234567.",
+  "total_duration_ms": 5008.424,
+  "nodes": [
+    {
+      "run_id": "fault_corrupt-t05-s0",
+      "node": "planner",
+      "started_at": "2026-06-08T08:48:01.547176+00:00",
+      "state_before": {
+        "run_id": "fault_corrupt-t05-s0",
+        "input_text": "I'm locked out of my account and the reset email never comes. Call me at +39 02 1234567.",
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "sanitized_text": "I'm locked out of my account and the reset email never comes. Call me at [PHONE].",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "User is locked out and unable to reset password due to missing reset email. This is an access issue requiring immediate attention and account recovery assistance. The classifier should prioritize this as urgent given the complete loss of access.",
+          "focus": [
+            "account access lockout",
+            "password reset failure",
+            "missing reset email",
+            "urgency - complete access denial",
+            "phone contact available"
+          ]
+        },
+        "errors": []
+      },
+      "duration_ms": 1935.275,
+      "ended_at": "2026-06-08T08:48:03.482501+00:00"
+    },
+    {
+      "run_id": "fault_corrupt-t05-s0",
+      "node": "executor",
+      "started_at": "2026-06-08T08:48:03.483673+00:00",
+      "state_before": {
+        "run_id": "fault_corrupt-t05-s0",
+        "input_text": "I'm locked out of my account and the reset email never comes. Call me at +39 02 1234567.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "User is locked out and unable to reset password due to missing reset email. This is an access issue requiring immediate attention and account recovery assistance. The classifier should prioritize this as urgent given the complete loss of access.",
+          "focus": [
+            "account access lockout",
+            "password reset failure",
+            "missing reset email",
+            "urgency - complete access denial",
+            "phone contact available"
+          ]
+        },
+        "sanitized_text": "I'm locked out of my account and the reset email never comes. Call me at [PHONE].",
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "classification": {
+          "category": "other",
+          "priority": "high",
+          "reason": "Complete account access denial due to lockout with non-functional password reset mechanism requires urgent intervention.",
+          "confidence": 0.95,
+          "source": "llm+corrupted"
+        },
+        "errors": []
+      },
+      "duration_ms": 1331.216,
+      "ended_at": "2026-06-08T08:48:04.814937+00:00"
+    },
+    {
+      "run_id": "fault_corrupt-t05-s0",
+      "node": "verifier",
+      "started_at": "2026-06-08T08:48:04.816266+00:00",
+      "state_before": {
+        "run_id": "fault_corrupt-t05-s0",
+        "input_text": "I'm locked out of my account and the reset email never comes. Call me at +39 02 1234567.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "User is locked out and unable to reset password due to missing reset email. This is an access issue requiring immediate attention and account recovery assistance. The classifier should prioritize this as urgent given the complete loss of access.",
+          "focus": [
+            "account access lockout",
+            "password reset failure",
+            "missing reset email",
+            "urgency - complete access denial",
+            "phone contact available"
+          ]
+        },
+        "sanitized_text": "I'm locked out of my account and the reset email never comes. Call me at [PHONE].",
+        "classification": {
+          "category": "other",
+          "priority": "high",
+          "reason": "Complete account access denial due to lockout with non-functional password reset mechanism requires urgent intervention.",
+          "confidence": 0.95,
+          "source": "llm+corrupted"
+        },
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "audit": {
+          "passed": false,
+          "issues": [
+            "Category 'other' is incorrect; this is clearly an account access issue and should be categorized as 'account' or 'login/authentication'",
+            "Priority 'high' may be appropriate given the account lockout, but the category classification undermines the ticket handling"
+          ],
+          "pii_findings": []
+        }
+      },
+      "duration_ms": 1741.919,
+      "ended_at": "2026-06-08T08:48:06.558250+00:00"
+    },
+    {
+      "run_id": "fault_corrupt-t05-s0",
+      "node": "finalizer",
+      "started_at": "2026-06-08T08:48:06.559618+00:00",
+      "state_before": {
+        "run_id": "fault_corrupt-t05-s0",
+        "input_text": "I'm locked out of my account and the reset email never comes. Call me at +39 02 1234567.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "User is locked out and unable to reset password due to missing reset email. This is an access issue requiring immediate attention and account recovery assistance. The classifier should prioritize this as urgent given the complete loss of access.",
+          "focus": [
+            "account access lockout",
+            "password reset failure",
+            "missing reset email",
+            "urgency - complete access denial",
+            "phone contact available"
+          ]
+        },
+        "sanitized_text": "I'm locked out of my account and the reset email never comes. Call me at [PHONE].",
+        "classification": {
+          "category": "other",
+          "priority": "high",
+          "reason": "Complete account access denial due to lockout with non-functional password reset mechanism requires urgent intervention.",
+          "confidence": 0.95,
+          "source": "llm+corrupted"
+        },
+        "audit": {
+          "passed": false,
+          "issues": [
+            "Category 'other' is incorrect; this is clearly an account access issue and should be categorized as 'account' or 'login/authentication'",
+            "Priority 'high' may be appropriate given the account lockout, but the category classification undermines the ticket handling"
+          ],
+          "pii_findings": []
+        },
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "decision": {
+          "outcome": "rejected",
+          "category": "other",
+          "priority": "high",
+          "reason": "Category 'other' is incorrect; this is clearly an account access issue and should be categorized as 'account' or 'login/authentication'; Priority 'high' may be appropriate given the account lockout, but the category classification undermines the ticket handling"
+        }
+      },
+      "duration_ms": 0.014,
+      "ended_at": "2026-06-08T08:48:06.559677+00:00"
+    }
+  ],
+  "tool_calls": [
+    {
+      "tool": "privacy.scan_and_redact",
+      "args": {
+        "chars": 88
+      },
+      "ok": true,
+      "error": null,
+      "duration_ms": 0.081
+    },
+    {
+      "tool": "llm.classify",
+      "args": {
+        "chars": 81
+      },
+      "ok": true,
+      "error": null,
+      "duration_ms": 1331.172
+    }
+  ],
+  "llm_calls": [
+    {
+      "node": "planner",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 356,
+      "output_tokens": 84,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 1935.104,
+      "usd_cost": 0.000776
+    },
+    {
+      "node": "executor",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 469,
+      "output_tokens": 46,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 1331.11,
+      "usd_cost": 0.000699
+    },
+    {
+      "node": "verifier",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 339,
+      "output_tokens": 71,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 1741.765,
+      "usd_cost": 0.000694
+    }
+  ],
+  "llm_tokens_total": 1365,
+  "llm_cache_read_tokens_total": 0,
+  "llm_cache_hit_ratio": 0.0,
+  "usd_cost_total": 0.002169,
+  "guardrail_events": [
+    {
+      "node": "planner",
+      "kind": "pii_redaction",
+      "detail": "redacted 1 item(s): phone"
+    }
+  ],
+  "errors": [],
+  "decision": {
+    "outcome": "rejected",
+    "category": "other",
+    "priority": "high",
+    "reason": "Category 'other' is incorrect; this is clearly an account access issue and should be categorized as 'account' or 'login/authentication'; Priority 'high' may be appropriate given the account lockout, but the category classification undermines the ticket handling"
+  }
+}

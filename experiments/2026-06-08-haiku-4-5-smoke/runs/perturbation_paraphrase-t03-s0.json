@@ -1,0 +1,241 @@
+{
+  "run_id": "perturbation_paraphrase-t03-s0",
+  "started_at": "2026-06-08T08:46:21.185015+00:00",
+  "ended_at": "2026-06-08T08:46:26.000724+00:00",
+  "input_text": "The application experiences a crash whenever I attempt to upload a file, and this issue is preventing me from completing my tasks.",
+  "total_duration_ms": 4805.223,
+  "nodes": [
+    {
+      "run_id": "perturbation_paraphrase-t03-s0",
+      "node": "planner",
+      "started_at": "2026-06-08T08:46:21.190958+00:00",
+      "state_before": {
+        "run_id": "perturbation_paraphrase-t03-s0",
+        "input_text": "The application experiences a crash whenever I attempt to upload a file, and this issue is preventing me from completing my tasks.",
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "sanitized_text": "The application experiences a crash whenever I attempt to upload a file, and this issue is preventing me from completing my tasks.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "User is experiencing a critical blocker with file upload functionality that prevents task completion. This requires immediate investigation of the upload mechanism and should be escalated for technical debugging.",
+          "focus": [
+            "critical severity - functionality blocker",
+            "file upload feature malfunction",
+            "reproducible crash condition",
+            "task workflow impact",
+            "potential data loss risk if file handling is corrupted"
+          ]
+        },
+        "errors": []
+      },
+      "duration_ms": 2142.169,
+      "ended_at": "2026-06-08T08:46:23.333172+00:00"
+    },
+    {
+      "run_id": "perturbation_paraphrase-t03-s0",
+      "node": "executor",
+      "started_at": "2026-06-08T08:46:23.334235+00:00",
+      "state_before": {
+        "run_id": "perturbation_paraphrase-t03-s0",
+        "input_text": "The application experiences a crash whenever I attempt to upload a file, and this issue is preventing me from completing my tasks.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "User is experiencing a critical blocker with file upload functionality that prevents task completion. This requires immediate investigation of the upload mechanism and should be escalated for technical debugging.",
+          "focus": [
+            "critical severity - functionality blocker",
+            "file upload feature malfunction",
+            "reproducible crash condition",
+            "task workflow impact",
+            "potential data loss risk if file handling is corrupted"
+          ]
+        },
+        "sanitized_text": "The application experiences a crash whenever I attempt to upload a file, and this issue is preventing me from completing my tasks.",
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "classification": {
+          "category": "technical",
+          "priority": "high",
+          "reason": "File upload functionality is completely broken and preventing task completion, which is a critical blocker with potential data loss implications.",
+          "confidence": 0.95,
+          "source": "llm"
+        },
+        "errors": []
+      },
+      "duration_ms": 1537.683,
+      "ended_at": "2026-06-08T08:46:24.871965+00:00"
+    },
+    {
+      "run_id": "perturbation_paraphrase-t03-s0",
+      "node": "verifier",
+      "started_at": "2026-06-08T08:46:24.873441+00:00",
+      "state_before": {
+        "run_id": "perturbation_paraphrase-t03-s0",
+        "input_text": "The application experiences a crash whenever I attempt to upload a file, and this issue is preventing me from completing my tasks.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "User is experiencing a critical blocker with file upload functionality that prevents task completion. This requires immediate investigation of the upload mechanism and should be escalated for technical debugging.",
+          "focus": [
+            "critical severity - functionality blocker",
+            "file upload feature malfunction",
+            "reproducible crash condition",
+            "task workflow impact",
+            "potential data loss risk if file handling is corrupted"
+          ]
+        },
+        "sanitized_text": "The application experiences a crash whenever I attempt to upload a file, and this issue is preventing me from completing my tasks.",
+        "classification": {
+          "category": "technical",
+          "priority": "high",
+          "reason": "File upload functionality is completely broken and preventing task completion, which is a critical blocker with potential data loss implications.",
+          "confidence": 0.95,
+          "source": "llm"
+        },
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "audit": {
+          "passed": true,
+          "issues": [],
+          "pii_findings": []
+        }
+      },
+      "duration_ms": 1125.358,
+      "ended_at": "2026-06-08T08:46:25.998854+00:00"
+    },
+    {
+      "run_id": "perturbation_paraphrase-t03-s0",
+      "node": "finalizer",
+      "started_at": "2026-06-08T08:46:26.000189+00:00",
+      "state_before": {
+        "run_id": "perturbation_paraphrase-t03-s0",
+        "input_text": "The application experiences a crash whenever I attempt to upload a file, and this issue is preventing me from completing my tasks.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "User is experiencing a critical blocker with file upload functionality that prevents task completion. This requires immediate investigation of the upload mechanism and should be escalated for technical debugging.",
+          "focus": [
+            "critical severity - functionality blocker",
+            "file upload feature malfunction",
+            "reproducible crash condition",
+            "task workflow impact",
+            "potential data loss risk if file handling is corrupted"
+          ]
+        },
+        "sanitized_text": "The application experiences a crash whenever I attempt to upload a file, and this issue is preventing me from completing my tasks.",
+        "classification": {
+          "category": "technical",
+          "priority": "high",
+          "reason": "File upload functionality is completely broken and preventing task completion, which is a critical blocker with potential data loss implications.",
+          "confidence": 0.95,
+          "source": "llm"
+        },
+        "audit": {
+          "passed": true,
+          "issues": [],
+          "pii_findings": []
+        },
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "decision": {
+          "outcome": "accepted",
+          "category": "technical",
+          "priority": "high",
+          "reason": "audit passed; classification produced"
+        }
+      },
+      "duration_ms": 0.013,
+      "ended_at": "2026-06-08T08:46:26.000243+00:00"
+    }
+  ],
+  "tool_calls": [
+    {
+      "tool": "privacy.scan_and_redact",
+      "args": {
+        "chars": 130
+      },
+      "ok": true,
+      "error": null,
+      "duration_ms": 0.053
+    },
+    {
+      "tool": "llm.classify",
+      "args": {
+        "chars": 130
+      },
+      "ok": true,
+      "error": null,
+      "duration_ms": 1537.624
+    }
+  ],
+  "llm_calls": [
+    {
+      "node": "planner",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 359,
+      "output_tokens": 83,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 2142.045,
+      "usd_cost": 0.000774
+    },
+    {
+      "node": "executor",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 481,
+      "output_tokens": 50,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 1537.57,
+      "usd_cost": 0.000731
+    },
+    {
+      "node": "verifier",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 342,
+      "output_tokens": 8,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 1125.204,
+      "usd_cost": 0.000382
+    }
+  ],
+  "llm_tokens_total": 1323,
+  "llm_cache_read_tokens_total": 0,
+  "llm_cache_hit_ratio": 0.0,
+  "usd_cost_total": 0.001887,
+  "guardrail_events": [],
+  "errors": [],
+  "decision": {
+    "outcome": "accepted",
+    "category": "technical",
+    "priority": "high",
+    "reason": "audit passed; classification produced"
+  }
+}

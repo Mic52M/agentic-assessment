@@ -1,0 +1,241 @@
+{
+  "run_id": "perturbation_typo-t07-s0",
+  "started_at": "2026-06-08T08:48:44.653313+00:00",
+  "ended_at": "2026-06-08T08:48:49.772330+00:00",
+  "input_text": "Someone is impersonating you rsupport etam snd phishing pur suers right now.",
+  "total_duration_ms": 5108.929,
+  "nodes": [
+    {
+      "run_id": "perturbation_typo-t07-s0",
+      "node": "planner",
+      "started_at": "2026-06-08T08:48:44.658181+00:00",
+      "state_before": {
+        "run_id": "perturbation_typo-t07-s0",
+        "input_text": "Someone is impersonating you rsupport etam snd phishing pur suers right now.",
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "sanitized_text": "Someone is impersonating you rsupport etam snd phishing pur suers right now.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "This ticket reports potential security fraud involving impersonation and phishing of support team members. This is a high-priority security incident that requires immediate escalation to the security and trust & safety teams, rather than standard support triage.",
+          "focus": [
+            "security incident",
+            "impersonation/phishing",
+            "urgent escalation needed",
+            "potential threat to support infrastructure",
+            "fraudulent activity"
+          ]
+        },
+        "errors": []
+      },
+      "duration_ms": 2140.58,
+      "ended_at": "2026-06-08T08:48:46.798808+00:00"
+    },
+    {
+      "run_id": "perturbation_typo-t07-s0",
+      "node": "executor",
+      "started_at": "2026-06-08T08:48:46.800147+00:00",
+      "state_before": {
+        "run_id": "perturbation_typo-t07-s0",
+        "input_text": "Someone is impersonating you rsupport etam snd phishing pur suers right now.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "This ticket reports potential security fraud involving impersonation and phishing of support team members. This is a high-priority security incident that requires immediate escalation to the security and trust & safety teams, rather than standard support triage.",
+          "focus": [
+            "security incident",
+            "impersonation/phishing",
+            "urgent escalation needed",
+            "potential threat to support infrastructure",
+            "fraudulent activity"
+          ]
+        },
+        "sanitized_text": "Someone is impersonating you rsupport etam snd phishing pur suers right now.",
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "classification": {
+          "category": "abuse",
+          "priority": "high",
+          "reason": "This reports an active security incident involving impersonation and phishing attacks targeting the support team and users, requiring immediate escalation.",
+          "confidence": 0.92,
+          "source": "llm"
+        },
+        "errors": []
+      },
+      "duration_ms": 1740.932,
+      "ended_at": "2026-06-08T08:48:48.541141+00:00"
+    },
+    {
+      "run_id": "perturbation_typo-t07-s0",
+      "node": "verifier",
+      "started_at": "2026-06-08T08:48:48.542614+00:00",
+      "state_before": {
+        "run_id": "perturbation_typo-t07-s0",
+        "input_text": "Someone is impersonating you rsupport etam snd phishing pur suers right now.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "This ticket reports potential security fraud involving impersonation and phishing of support team members. This is a high-priority security incident that requires immediate escalation to the security and trust & safety teams, rather than standard support triage.",
+          "focus": [
+            "security incident",
+            "impersonation/phishing",
+            "urgent escalation needed",
+            "potential threat to support infrastructure",
+            "fraudulent activity"
+          ]
+        },
+        "sanitized_text": "Someone is impersonating you rsupport etam snd phishing pur suers right now.",
+        "classification": {
+          "category": "abuse",
+          "priority": "high",
+          "reason": "This reports an active security incident involving impersonation and phishing attacks targeting the support team and users, requiring immediate escalation.",
+          "confidence": 0.92,
+          "source": "llm"
+        },
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "audit": {
+          "passed": true,
+          "issues": [],
+          "pii_findings": []
+        }
+      },
+      "duration_ms": 1227.402,
+      "ended_at": "2026-06-08T08:48:49.770072+00:00"
+    },
+    {
+      "run_id": "perturbation_typo-t07-s0",
+      "node": "finalizer",
+      "started_at": "2026-06-08T08:48:49.771407+00:00",
+      "state_before": {
+        "run_id": "perturbation_typo-t07-s0",
+        "input_text": "Someone is impersonating you rsupport etam snd phishing pur suers right now.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "This ticket reports potential security fraud involving impersonation and phishing of support team members. This is a high-priority security incident that requires immediate escalation to the security and trust & safety teams, rather than standard support triage.",
+          "focus": [
+            "security incident",
+            "impersonation/phishing",
+            "urgent escalation needed",
+            "potential threat to support infrastructure",
+            "fraudulent activity"
+          ]
+        },
+        "sanitized_text": "Someone is impersonating you rsupport etam snd phishing pur suers right now.",
+        "classification": {
+          "category": "abuse",
+          "priority": "high",
+          "reason": "This reports an active security incident involving impersonation and phishing attacks targeting the support team and users, requiring immediate escalation.",
+          "confidence": 0.92,
+          "source": "llm"
+        },
+        "audit": {
+          "passed": true,
+          "issues": [],
+          "pii_findings": []
+        },
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "decision": {
+          "outcome": "accepted",
+          "category": "abuse",
+          "priority": "high",
+          "reason": "audit passed; classification produced"
+        }
+      },
+      "duration_ms": 0.015,
+      "ended_at": "2026-06-08T08:48:49.771481+00:00"
+    }
+  ],
+  "tool_calls": [
+    {
+      "tool": "privacy.scan_and_redact",
+      "args": {
+        "chars": 76
+      },
+      "ok": true,
+      "error": null,
+      "duration_ms": 0.044
+    },
+    {
+      "tool": "llm.classify",
+      "args": {
+        "chars": 76
+      },
+      "ok": true,
+      "error": null,
+      "duration_ms": 1740.865
+    }
+  ],
+  "llm_calls": [
+    {
+      "node": "planner",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 357,
+      "output_tokens": 89,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 2140.435,
+      "usd_cost": 0.000802
+    },
+    {
+      "node": "executor",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 471,
+      "output_tokens": 53,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 1740.81,
+      "usd_cost": 0.000736
+    },
+    {
+      "node": "verifier",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 340,
+      "output_tokens": 8,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 1227.271,
+      "usd_cost": 0.00038
+    }
+  ],
+  "llm_tokens_total": 1318,
+  "llm_cache_read_tokens_total": 0,
+  "llm_cache_hit_ratio": 0.0,
+  "usd_cost_total": 0.001918,
+  "guardrail_events": [],
+  "errors": [],
+  "decision": {
+    "outcome": "accepted",
+    "category": "abuse",
+    "priority": "high",
+    "reason": "audit passed; classification produced"
+  }
+}

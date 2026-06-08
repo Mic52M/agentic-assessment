@@ -1,0 +1,247 @@
+{
+  "run_id": "fault_corrupt-t04-s0",
+  "started_at": "2026-06-08T08:47:19.658437+00:00",
+  "ended_at": "2026-06-08T08:47:24.778894+00:00",
+  "input_text": "There is a minor typo on the settings page, just letting you know.",
+  "total_duration_ms": 5111.265,
+  "nodes": [
+    {
+      "run_id": "fault_corrupt-t04-s0",
+      "node": "planner",
+      "started_at": "2026-06-08T08:47:19.662985+00:00",
+      "state_before": {
+        "run_id": "fault_corrupt-t04-s0",
+        "input_text": "There is a minor typo on the settings page, just letting you know.",
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "sanitized_text": "There is a minor typo on the settings page, just letting you know.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "This is a low-priority cosmetic issue requiring documentation and assignment to the product or engineering team for a future fix. No immediate action or user impact.",
+          "focus": [
+            "Low priority",
+            "Cosmetic/typo issue",
+            "Settings page",
+            "No user impact",
+            "Documentation needed"
+          ]
+        },
+        "errors": []
+      },
+      "duration_ms": 2041.632,
+      "ended_at": "2026-06-08T08:47:21.704663+00:00"
+    },
+    {
+      "run_id": "fault_corrupt-t04-s0",
+      "node": "executor",
+      "started_at": "2026-06-08T08:47:21.706118+00:00",
+      "state_before": {
+        "run_id": "fault_corrupt-t04-s0",
+        "input_text": "There is a minor typo on the settings page, just letting you know.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "This is a low-priority cosmetic issue requiring documentation and assignment to the product or engineering team for a future fix. No immediate action or user impact.",
+          "focus": [
+            "Low priority",
+            "Cosmetic/typo issue",
+            "Settings page",
+            "No user impact",
+            "Documentation needed"
+          ]
+        },
+        "sanitized_text": "There is a minor typo on the settings page, just letting you know.",
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "classification": {
+          "category": "abuse",
+          "priority": "low",
+          "reason": "This is a cosmetic typo report on the settings page with no functional impact or user disruption.",
+          "confidence": 0.92,
+          "source": "llm+corrupted"
+        },
+        "errors": []
+      },
+      "duration_ms": 1225.368,
+      "ended_at": "2026-06-08T08:47:22.931535+00:00"
+    },
+    {
+      "run_id": "fault_corrupt-t04-s0",
+      "node": "verifier",
+      "started_at": "2026-06-08T08:47:22.932976+00:00",
+      "state_before": {
+        "run_id": "fault_corrupt-t04-s0",
+        "input_text": "There is a minor typo on the settings page, just letting you know.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "This is a low-priority cosmetic issue requiring documentation and assignment to the product or engineering team for a future fix. No immediate action or user impact.",
+          "focus": [
+            "Low priority",
+            "Cosmetic/typo issue",
+            "Settings page",
+            "No user impact",
+            "Documentation needed"
+          ]
+        },
+        "sanitized_text": "There is a minor typo on the settings page, just letting you know.",
+        "classification": {
+          "category": "abuse",
+          "priority": "low",
+          "reason": "This is a cosmetic typo report on the settings page with no functional impact or user disruption.",
+          "confidence": 0.92,
+          "source": "llm+corrupted"
+        },
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "audit": {
+          "passed": false,
+          "issues": [
+            "Category is incorrect: this is a bug/typo report, not an abuse issue. Abuse typically refers to policy violations, harassment, or misuse of service.",
+            "Category should be something like 'bug' or 'documentation' rather than 'abuse'."
+          ],
+          "pii_findings": []
+        }
+      },
+      "duration_ms": 1844.252,
+      "ended_at": "2026-06-08T08:47:24.777294+00:00"
+    },
+    {
+      "run_id": "fault_corrupt-t04-s0",
+      "node": "finalizer",
+      "started_at": "2026-06-08T08:47:24.778390+00:00",
+      "state_before": {
+        "run_id": "fault_corrupt-t04-s0",
+        "input_text": "There is a minor typo on the settings page, just letting you know.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "This is a low-priority cosmetic issue requiring documentation and assignment to the product or engineering team for a future fix. No immediate action or user impact.",
+          "focus": [
+            "Low priority",
+            "Cosmetic/typo issue",
+            "Settings page",
+            "No user impact",
+            "Documentation needed"
+          ]
+        },
+        "sanitized_text": "There is a minor typo on the settings page, just letting you know.",
+        "classification": {
+          "category": "abuse",
+          "priority": "low",
+          "reason": "This is a cosmetic typo report on the settings page with no functional impact or user disruption.",
+          "confidence": 0.92,
+          "source": "llm+corrupted"
+        },
+        "audit": {
+          "passed": false,
+          "issues": [
+            "Category is incorrect: this is a bug/typo report, not an abuse issue. Abuse typically refers to policy violations, harassment, or misuse of service.",
+            "Category should be something like 'bug' or 'documentation' rather than 'abuse'."
+          ],
+          "pii_findings": []
+        },
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "decision": {
+          "outcome": "rejected",
+          "category": "abuse",
+          "priority": "low",
+          "reason": "Category is incorrect: this is a bug/typo report, not an abuse issue. Abuse typically refers to policy violations, harassment, or misuse of service.; Category should be something like 'bug' or 'documentation' rather than 'abuse'."
+        }
+      },
+      "duration_ms": 0.013,
+      "ended_at": "2026-06-08T08:47:24.778445+00:00"
+    }
+  ],
+  "tool_calls": [
+    {
+      "tool": "privacy.scan_and_redact",
+      "args": {
+        "chars": 66
+      },
+      "ok": true,
+      "error": null,
+      "duration_ms": 0.037
+    },
+    {
+      "tool": "llm.classify",
+      "args": {
+        "chars": 66
+      },
+      "ok": true,
+      "error": null,
+      "duration_ms": 1225.309
+    }
+  ],
+  "llm_calls": [
+    {
+      "node": "planner",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 351,
+      "output_tokens": 65,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 2041.484,
+      "usd_cost": 0.000676
+    },
+    {
+      "node": "executor",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 461,
+      "output_tokens": 48,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 1225.237,
+      "usd_cost": 0.000701
+    },
+    {
+      "node": "verifier",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 334,
+      "output_tokens": 69,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 1844.135,
+      "usd_cost": 0.000679
+    }
+  ],
+  "llm_tokens_total": 1328,
+  "llm_cache_read_tokens_total": 0,
+  "llm_cache_hit_ratio": 0.0,
+  "usd_cost_total": 0.002056,
+  "guardrail_events": [],
+  "errors": [],
+  "decision": {
+    "outcome": "rejected",
+    "category": "abuse",
+    "priority": "low",
+    "reason": "Category is incorrect: this is a bug/typo report, not an abuse issue. Abuse typically refers to policy violations, harassment, or misuse of service.; Category should be something like 'bug' or 'documentation' rather than 'abuse'."
+  }
+}

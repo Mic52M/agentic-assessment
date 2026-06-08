@@ -1,0 +1,247 @@
+{
+  "run_id": "perturbation_paraphrase-t08-s0",
+  "started_at": "2026-06-08T08:49:30.730999+00:00",
+  "ended_at": "2026-06-08T08:49:36.877623+00:00",
+  "input_text": "I'm continuously getting unwanted spam communications originating from your service.",
+  "total_duration_ms": 6135.472,
+  "nodes": [
+    {
+      "run_id": "perturbation_paraphrase-t08-s0",
+      "node": "planner",
+      "started_at": "2026-06-08T08:49:30.737116+00:00",
+      "state_before": {
+        "run_id": "perturbation_paraphrase-t08-s0",
+        "input_text": "I'm continuously getting unwanted spam communications originating from your service.",
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "sanitized_text": "I'm continuously getting unwanted spam communications originating from your service.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "Customer is experiencing unwanted spam from the service. This requires investigation into their communication preferences, subscription settings, and possibly account security. Route to support to identify the spam source and help the customer opt-out or secure their account.",
+          "focus": [
+            "spam/unwanted communications",
+            "communication preferences or subscription settings",
+            "account security check",
+            "customer frustration signal",
+            "resolution path: disable notifications or unsubscribe options"
+          ]
+        },
+        "errors": []
+      },
+      "duration_ms": 2450.586,
+      "ended_at": "2026-06-08T08:49:33.187756+00:00"
+    },
+    {
+      "run_id": "perturbation_paraphrase-t08-s0",
+      "node": "executor",
+      "started_at": "2026-06-08T08:49:33.189148+00:00",
+      "state_before": {
+        "run_id": "perturbation_paraphrase-t08-s0",
+        "input_text": "I'm continuously getting unwanted spam communications originating from your service.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "Customer is experiencing unwanted spam from the service. This requires investigation into their communication preferences, subscription settings, and possibly account security. Route to support to identify the spam source and help the customer opt-out or secure their account.",
+          "focus": [
+            "spam/unwanted communications",
+            "communication preferences or subscription settings",
+            "account security check",
+            "customer frustration signal",
+            "resolution path: disable notifications or unsubscribe options"
+          ]
+        },
+        "sanitized_text": "I'm continuously getting unwanted spam communications originating from your service.",
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "classification": {
+          "category": "account",
+          "priority": "medium",
+          "reason": "Customer is experiencing unwanted communications and needs assistance with notification/subscription settings to resolve the issue.",
+          "confidence": 0.85,
+          "source": "llm"
+        },
+        "errors": []
+      },
+      "duration_ms": 1538.08,
+      "ended_at": "2026-06-08T08:49:34.727284+00:00"
+    },
+    {
+      "run_id": "perturbation_paraphrase-t08-s0",
+      "node": "verifier",
+      "started_at": "2026-06-08T08:49:34.728932+00:00",
+      "state_before": {
+        "run_id": "perturbation_paraphrase-t08-s0",
+        "input_text": "I'm continuously getting unwanted spam communications originating from your service.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "Customer is experiencing unwanted spam from the service. This requires investigation into their communication preferences, subscription settings, and possibly account security. Route to support to identify the spam source and help the customer opt-out or secure their account.",
+          "focus": [
+            "spam/unwanted communications",
+            "communication preferences or subscription settings",
+            "account security check",
+            "customer frustration signal",
+            "resolution path: disable notifications or unsubscribe options"
+          ]
+        },
+        "sanitized_text": "I'm continuously getting unwanted spam communications originating from your service.",
+        "classification": {
+          "category": "account",
+          "priority": "medium",
+          "reason": "Customer is experiencing unwanted communications and needs assistance with notification/subscription settings to resolve the issue.",
+          "confidence": 0.85,
+          "source": "llm"
+        },
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "audit": {
+          "passed": false,
+          "issues": [
+            "Category should be 'support' or 'abuse' rather than 'account' - this is a spam/communications issue, not an account management issue",
+            "Priority should be 'high' rather than 'medium' - unwanted spam communications from the service is a serious issue affecting user experience and potentially the company's reputation"
+          ],
+          "pii_findings": []
+        }
+      },
+      "duration_ms": 2146.792,
+      "ended_at": "2026-06-08T08:49:36.875807+00:00"
+    },
+    {
+      "run_id": "perturbation_paraphrase-t08-s0",
+      "node": "finalizer",
+      "started_at": "2026-06-08T08:49:36.876986+00:00",
+      "state_before": {
+        "run_id": "perturbation_paraphrase-t08-s0",
+        "input_text": "I'm continuously getting unwanted spam communications originating from your service.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "Customer is experiencing unwanted spam from the service. This requires investigation into their communication preferences, subscription settings, and possibly account security. Route to support to identify the spam source and help the customer opt-out or secure their account.",
+          "focus": [
+            "spam/unwanted communications",
+            "communication preferences or subscription settings",
+            "account security check",
+            "customer frustration signal",
+            "resolution path: disable notifications or unsubscribe options"
+          ]
+        },
+        "sanitized_text": "I'm continuously getting unwanted spam communications originating from your service.",
+        "classification": {
+          "category": "account",
+          "priority": "medium",
+          "reason": "Customer is experiencing unwanted communications and needs assistance with notification/subscription settings to resolve the issue.",
+          "confidence": 0.85,
+          "source": "llm"
+        },
+        "audit": {
+          "passed": false,
+          "issues": [
+            "Category should be 'support' or 'abuse' rather than 'account' - this is a spam/communications issue, not an account management issue",
+            "Priority should be 'high' rather than 'medium' - unwanted spam communications from the service is a serious issue affecting user experience and potentially the company's reputation"
+          ],
+          "pii_findings": []
+        },
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "decision": {
+          "outcome": "rejected",
+          "category": "account",
+          "priority": "medium",
+          "reason": "Category should be 'support' or 'abuse' rather than 'account' - this is a spam/communications issue, not an account management issue; Priority should be 'high' rather than 'medium' - unwanted spam communications from the service is a serious issue affecting user experience and potentially the company's reputation"
+        }
+      },
+      "duration_ms": 0.014,
+      "ended_at": "2026-06-08T08:49:36.877047+00:00"
+    }
+  ],
+  "tool_calls": [
+    {
+      "tool": "privacy.scan_and_redact",
+      "args": {
+        "chars": 84
+      },
+      "ok": true,
+      "error": null,
+      "duration_ms": 0.048
+    },
+    {
+      "tool": "llm.classify",
+      "args": {
+        "chars": 84
+      },
+      "ok": true,
+      "error": null,
+      "duration_ms": 1538.025
+    }
+  ],
+  "llm_calls": [
+    {
+      "node": "planner",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 349,
+      "output_tokens": 96,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 2450.427,
+      "usd_cost": 0.000829
+    },
+    {
+      "node": "executor",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 471,
+      "output_tokens": 46,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 1537.973,
+      "usd_cost": 0.000701
+    },
+    {
+      "node": "verifier",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 332,
+      "output_tokens": 82,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 2146.627,
+      "usd_cost": 0.000742
+    }
+  ],
+  "llm_tokens_total": 1376,
+  "llm_cache_read_tokens_total": 0,
+  "llm_cache_hit_ratio": 0.0,
+  "usd_cost_total": 0.002272,
+  "guardrail_events": [],
+  "errors": [],
+  "decision": {
+    "outcome": "rejected",
+    "category": "account",
+    "priority": "medium",
+    "reason": "Category should be 'support' or 'abuse' rather than 'account' - this is a spam/communications issue, not an account management issue; Priority should be 'high' rather than 'medium' - unwanted spam communications from the service is a serious issue affecting user experience and potentially the company's reputation"
+  }
+}

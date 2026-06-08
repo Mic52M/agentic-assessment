@@ -1,0 +1,237 @@
+{
+  "run_id": "fault_slow-t02-s0",
+  "started_at": "2026-06-08T08:45:59.699881+00:00",
+  "ended_at": "2026-06-08T08:46:03.998166+00:00",
+  "input_text": "Just wondering when my next invoice will be issued, no rush.",
+  "total_duration_ms": 4289.477,
+  "nodes": [
+    {
+      "run_id": "fault_slow-t02-s0",
+      "node": "planner",
+      "started_at": "2026-06-08T08:45:59.704375+00:00",
+      "state_before": {
+        "run_id": "fault_slow-t02-s0",
+        "input_text": "Just wondering when my next invoice will be issued, no rush.",
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "sanitized_text": "Just wondering when my next invoice will be issued, no rush.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "Straightforward billing inquiry about invoice timing. Route to billing/account support team for a simple status update on next invoice date.",
+          "focus": [
+            "billing inquiry",
+            "invoice timing",
+            "low urgency",
+            "routine account question"
+          ]
+        },
+        "errors": []
+      },
+      "duration_ms": 1836.255,
+      "ended_at": "2026-06-08T08:46:01.540670+00:00"
+    },
+    {
+      "run_id": "fault_slow-t02-s0",
+      "node": "executor",
+      "started_at": "2026-06-08T08:46:01.541850+00:00",
+      "state_before": {
+        "run_id": "fault_slow-t02-s0",
+        "input_text": "Just wondering when my next invoice will be issued, no rush.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "Straightforward billing inquiry about invoice timing. Route to billing/account support team for a simple status update on next invoice date.",
+          "focus": [
+            "billing inquiry",
+            "invoice timing",
+            "low urgency",
+            "routine account question"
+          ]
+        },
+        "sanitized_text": "Just wondering when my next invoice will be issued, no rush.",
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "classification": {
+          "category": "billing",
+          "priority": "low",
+          "reason": "Customer is asking about invoice timing with no urgency indicated, making this a routine billing inquiry.",
+          "confidence": 0.95,
+          "source": "llm"
+        },
+        "errors": []
+      },
+      "duration_ms": 1127.033,
+      "ended_at": "2026-06-08T08:46:02.668921+00:00"
+    },
+    {
+      "run_id": "fault_slow-t02-s0",
+      "node": "verifier",
+      "started_at": "2026-06-08T08:46:02.670037+00:00",
+      "state_before": {
+        "run_id": "fault_slow-t02-s0",
+        "input_text": "Just wondering when my next invoice will be issued, no rush.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "Straightforward billing inquiry about invoice timing. Route to billing/account support team for a simple status update on next invoice date.",
+          "focus": [
+            "billing inquiry",
+            "invoice timing",
+            "low urgency",
+            "routine account question"
+          ]
+        },
+        "sanitized_text": "Just wondering when my next invoice will be issued, no rush.",
+        "classification": {
+          "category": "billing",
+          "priority": "low",
+          "reason": "Customer is asking about invoice timing with no urgency indicated, making this a routine billing inquiry.",
+          "confidence": 0.95,
+          "source": "llm"
+        },
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "audit": {
+          "passed": true,
+          "issues": [],
+          "pii_findings": []
+        }
+      },
+      "duration_ms": 1326.177,
+      "ended_at": "2026-06-08T08:46:03.996266+00:00"
+    },
+    {
+      "run_id": "fault_slow-t02-s0",
+      "node": "finalizer",
+      "started_at": "2026-06-08T08:46:03.997462+00:00",
+      "state_before": {
+        "run_id": "fault_slow-t02-s0",
+        "input_text": "Just wondering when my next invoice will be issued, no rush.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "Straightforward billing inquiry about invoice timing. Route to billing/account support team for a simple status update on next invoice date.",
+          "focus": [
+            "billing inquiry",
+            "invoice timing",
+            "low urgency",
+            "routine account question"
+          ]
+        },
+        "sanitized_text": "Just wondering when my next invoice will be issued, no rush.",
+        "classification": {
+          "category": "billing",
+          "priority": "low",
+          "reason": "Customer is asking about invoice timing with no urgency indicated, making this a routine billing inquiry.",
+          "confidence": 0.95,
+          "source": "llm"
+        },
+        "audit": {
+          "passed": true,
+          "issues": [],
+          "pii_findings": []
+        },
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "decision": {
+          "outcome": "accepted",
+          "category": "billing",
+          "priority": "low",
+          "reason": "audit passed; classification produced"
+        }
+      },
+      "duration_ms": 0.012,
+      "ended_at": "2026-06-08T08:46:03.997518+00:00"
+    }
+  ],
+  "tool_calls": [
+    {
+      "tool": "privacy.scan_and_redact",
+      "args": {
+        "chars": 60
+      },
+      "ok": true,
+      "error": null,
+      "duration_ms": 0.037
+    },
+    {
+      "tool": "llm.classify",
+      "args": {
+        "chars": 60
+      },
+      "ok": true,
+      "error": null,
+      "duration_ms": 1126.995
+    }
+  ],
+  "llm_calls": [
+    {
+      "node": "planner",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 348,
+      "output_tokens": 56,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 1836.137,
+      "usd_cost": 0.000628
+    },
+    {
+      "node": "executor",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 451,
+      "output_tokens": 46,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 1106.664,
+      "usd_cost": 0.000681
+    },
+    {
+      "node": "verifier",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 331,
+      "output_tokens": 8,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 1326.08,
+      "usd_cost": 0.000371
+    }
+  ],
+  "llm_tokens_total": 1240,
+  "llm_cache_read_tokens_total": 0,
+  "llm_cache_hit_ratio": 0.0,
+  "usd_cost_total": 0.00168,
+  "guardrail_events": [],
+  "errors": [],
+  "decision": {
+    "outcome": "accepted",
+    "category": "billing",
+    "priority": "low",
+    "reason": "audit passed; classification produced"
+  }
+}

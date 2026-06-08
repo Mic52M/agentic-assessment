@@ -1,0 +1,241 @@
+{
+  "run_id": "fault_crash-t08-s0",
+  "started_at": "2026-06-08T08:49:47.219507+00:00",
+  "ended_at": "2026-06-08T08:49:52.441649+00:00",
+  "input_text": "I keep receiving spam messages coming from your platform.",
+  "total_duration_ms": 5209.878,
+  "nodes": [
+    {
+      "run_id": "fault_crash-t08-s0",
+      "node": "planner",
+      "started_at": "2026-06-08T08:49:47.226184+00:00",
+      "state_before": {
+        "run_id": "fault_crash-t08-s0",
+        "input_text": "I keep receiving spam messages coming from your platform.",
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "sanitized_text": "I keep receiving spam messages coming from your platform.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "User is reporting unsolicited/spam messages originating from the platform. This requires investigation into message source, user account security, and potential abuse vectors. Escalate to trust & safety or abuse team to verify the claim and take corrective action.",
+          "focus": [
+            "spam/abuse report",
+            "message source verification",
+            "account security check",
+            "potential unauthorized access or compromised sender account",
+            "user impact and remediation steps"
+          ]
+        },
+        "errors": []
+      },
+      "duration_ms": 2140.945,
+      "ended_at": "2026-06-08T08:49:49.367184+00:00"
+    },
+    {
+      "run_id": "fault_crash-t08-s0",
+      "node": "executor",
+      "started_at": "2026-06-08T08:49:49.368933+00:00",
+      "state_before": {
+        "run_id": "fault_crash-t08-s0",
+        "input_text": "I keep receiving spam messages coming from your platform.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "User is reporting unsolicited/spam messages originating from the platform. This requires investigation into message source, user account security, and potential abuse vectors. Escalate to trust & safety or abuse team to verify the claim and take corrective action.",
+          "focus": [
+            "spam/abuse report",
+            "message source verification",
+            "account security check",
+            "potential unauthorized access or compromised sender account",
+            "user impact and remediation steps"
+          ]
+        },
+        "sanitized_text": "I keep receiving spam messages coming from your platform.",
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "classification": {
+          "category": "abuse",
+          "priority": "medium",
+          "reason": "User reports receiving spam messages through the platform, which requires investigation into message source verification and potential account security issues.",
+          "confidence": 0.92,
+          "source": "llm"
+        },
+        "errors": []
+      },
+      "duration_ms": 1943.618,
+      "ended_at": "2026-06-08T08:49:51.312616+00:00"
+    },
+    {
+      "run_id": "fault_crash-t08-s0",
+      "node": "verifier",
+      "started_at": "2026-06-08T08:49:51.314119+00:00",
+      "state_before": {
+        "run_id": "fault_crash-t08-s0",
+        "input_text": "I keep receiving spam messages coming from your platform.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "User is reporting unsolicited/spam messages originating from the platform. This requires investigation into message source, user account security, and potential abuse vectors. Escalate to trust & safety or abuse team to verify the claim and take corrective action.",
+          "focus": [
+            "spam/abuse report",
+            "message source verification",
+            "account security check",
+            "potential unauthorized access or compromised sender account",
+            "user impact and remediation steps"
+          ]
+        },
+        "sanitized_text": "I keep receiving spam messages coming from your platform.",
+        "classification": {
+          "category": "abuse",
+          "priority": "medium",
+          "reason": "User reports receiving spam messages through the platform, which requires investigation into message source verification and potential account security issues.",
+          "confidence": 0.92,
+          "source": "llm"
+        },
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "audit": {
+          "passed": true,
+          "issues": [],
+          "pii_findings": []
+        }
+      },
+      "duration_ms": 1125.3,
+      "ended_at": "2026-06-08T08:49:52.439480+00:00"
+    },
+    {
+      "run_id": "fault_crash-t08-s0",
+      "node": "finalizer",
+      "started_at": "2026-06-08T08:49:52.441002+00:00",
+      "state_before": {
+        "run_id": "fault_crash-t08-s0",
+        "input_text": "I keep receiving spam messages coming from your platform.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "User is reporting unsolicited/spam messages originating from the platform. This requires investigation into message source, user account security, and potential abuse vectors. Escalate to trust & safety or abuse team to verify the claim and take corrective action.",
+          "focus": [
+            "spam/abuse report",
+            "message source verification",
+            "account security check",
+            "potential unauthorized access or compromised sender account",
+            "user impact and remediation steps"
+          ]
+        },
+        "sanitized_text": "I keep receiving spam messages coming from your platform.",
+        "classification": {
+          "category": "abuse",
+          "priority": "medium",
+          "reason": "User reports receiving spam messages through the platform, which requires investigation into message source verification and potential account security issues.",
+          "confidence": 0.92,
+          "source": "llm"
+        },
+        "audit": {
+          "passed": true,
+          "issues": [],
+          "pii_findings": []
+        },
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "decision": {
+          "outcome": "accepted",
+          "category": "abuse",
+          "priority": "medium",
+          "reason": "audit passed; classification produced"
+        }
+      },
+      "duration_ms": 0.015,
+      "ended_at": "2026-06-08T08:49:52.441067+00:00"
+    }
+  ],
+  "tool_calls": [
+    {
+      "tool": "privacy.scan_and_redact",
+      "args": {
+        "chars": 57
+      },
+      "ok": true,
+      "error": null,
+      "duration_ms": 0.05
+    },
+    {
+      "tool": "llm.classify",
+      "args": {
+        "chars": 57
+      },
+      "ok": true,
+      "error": null,
+      "duration_ms": 1943.57
+    }
+  ],
+  "llm_calls": [
+    {
+      "node": "planner",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 345,
+      "output_tokens": 93,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 2140.776,
+      "usd_cost": 0.00081
+    },
+    {
+      "node": "executor",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 463,
+      "output_tokens": 49,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 1943.516,
+      "usd_cost": 0.000708
+    },
+    {
+      "node": "verifier",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 328,
+      "output_tokens": 8,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 1125.165,
+      "usd_cost": 0.000368
+    }
+  ],
+  "llm_tokens_total": 1286,
+  "llm_cache_read_tokens_total": 0,
+  "llm_cache_hit_ratio": 0.0,
+  "usd_cost_total": 0.001886,
+  "guardrail_events": [],
+  "errors": [],
+  "decision": {
+    "outcome": "accepted",
+    "category": "abuse",
+    "priority": "medium",
+    "reason": "audit passed; classification produced"
+  }
+}

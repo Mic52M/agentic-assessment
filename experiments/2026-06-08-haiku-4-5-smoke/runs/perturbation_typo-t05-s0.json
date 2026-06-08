@@ -1,0 +1,247 @@
+{
+  "run_id": "perturbation_typo-t05-s0",
+  "started_at": "2026-06-08T08:47:29.182328+00:00",
+  "ended_at": "2026-06-08T08:47:33.993577+00:00",
+  "input_text": "I'm locked out of my account and yhe reset eamil mever comes. Csll em at +39 02 1234567.",
+  "total_duration_ms": 4802.186,
+  "nodes": [
+    {
+      "run_id": "perturbation_typo-t05-s0",
+      "node": "planner",
+      "started_at": "2026-06-08T08:47:29.186936+00:00",
+      "state_before": {
+        "run_id": "perturbation_typo-t05-s0",
+        "input_text": "I'm locked out of my account and yhe reset eamil mever comes. Csll em at +39 02 1234567.",
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "sanitized_text": "I'm locked out of my account and yhe reset eamil mever comes. Csll em at [PHONE].",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "Account lockout with non-functional password reset is a high-priority access issue requiring immediate intervention. The user has provided direct contact information and the problem prevents them from using the service.",
+          "focus": [
+            "account access blocked",
+            "password reset failure",
+            "urgent/blocking issue",
+            "customer contact available",
+            "potential email delivery problem"
+          ]
+        },
+        "errors": []
+      },
+      "duration_ms": 2142.201,
+      "ended_at": "2026-06-08T08:47:31.329181+00:00"
+    },
+    {
+      "run_id": "perturbation_typo-t05-s0",
+      "node": "executor",
+      "started_at": "2026-06-08T08:47:31.330414+00:00",
+      "state_before": {
+        "run_id": "perturbation_typo-t05-s0",
+        "input_text": "I'm locked out of my account and yhe reset eamil mever comes. Csll em at +39 02 1234567.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "Account lockout with non-functional password reset is a high-priority access issue requiring immediate intervention. The user has provided direct contact information and the problem prevents them from using the service.",
+          "focus": [
+            "account access blocked",
+            "password reset failure",
+            "urgent/blocking issue",
+            "customer contact available",
+            "potential email delivery problem"
+          ]
+        },
+        "sanitized_text": "I'm locked out of my account and yhe reset eamil mever comes. Csll em at [PHONE].",
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "classification": {
+          "category": "account",
+          "priority": "high",
+          "reason": "Customer is locked out of their account with a non-functioning password reset, which is a blocking issue preventing access to their account.",
+          "confidence": 0.95,
+          "source": "llm"
+        },
+        "errors": []
+      },
+      "duration_ms": 1534.194,
+      "ended_at": "2026-06-08T08:47:32.864658+00:00"
+    },
+    {
+      "run_id": "perturbation_typo-t05-s0",
+      "node": "verifier",
+      "started_at": "2026-06-08T08:47:32.865987+00:00",
+      "state_before": {
+        "run_id": "perturbation_typo-t05-s0",
+        "input_text": "I'm locked out of my account and yhe reset eamil mever comes. Csll em at +39 02 1234567.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "Account lockout with non-functional password reset is a high-priority access issue requiring immediate intervention. The user has provided direct contact information and the problem prevents them from using the service.",
+          "focus": [
+            "account access blocked",
+            "password reset failure",
+            "urgent/blocking issue",
+            "customer contact available",
+            "potential email delivery problem"
+          ]
+        },
+        "sanitized_text": "I'm locked out of my account and yhe reset eamil mever comes. Csll em at [PHONE].",
+        "classification": {
+          "category": "account",
+          "priority": "high",
+          "reason": "Customer is locked out of their account with a non-functioning password reset, which is a blocking issue preventing access to their account.",
+          "confidence": 0.95,
+          "source": "llm"
+        },
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "audit": {
+          "passed": true,
+          "issues": [],
+          "pii_findings": []
+        }
+      },
+      "duration_ms": 1125.778,
+      "ended_at": "2026-06-08T08:47:33.991818+00:00"
+    },
+    {
+      "run_id": "perturbation_typo-t05-s0",
+      "node": "finalizer",
+      "started_at": "2026-06-08T08:47:33.993016+00:00",
+      "state_before": {
+        "run_id": "perturbation_typo-t05-s0",
+        "input_text": "I'm locked out of my account and yhe reset eamil mever comes. Csll em at +39 02 1234567.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "Account lockout with non-functional password reset is a high-priority access issue requiring immediate intervention. The user has provided direct contact information and the problem prevents them from using the service.",
+          "focus": [
+            "account access blocked",
+            "password reset failure",
+            "urgent/blocking issue",
+            "customer contact available",
+            "potential email delivery problem"
+          ]
+        },
+        "sanitized_text": "I'm locked out of my account and yhe reset eamil mever comes. Csll em at [PHONE].",
+        "classification": {
+          "category": "account",
+          "priority": "high",
+          "reason": "Customer is locked out of their account with a non-functioning password reset, which is a blocking issue preventing access to their account.",
+          "confidence": 0.95,
+          "source": "llm"
+        },
+        "audit": {
+          "passed": true,
+          "issues": [],
+          "pii_findings": []
+        },
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "decision": {
+          "outcome": "accepted",
+          "category": "account",
+          "priority": "high",
+          "reason": "audit passed; classification produced"
+        }
+      },
+      "duration_ms": 0.013,
+      "ended_at": "2026-06-08T08:47:33.993073+00:00"
+    }
+  ],
+  "tool_calls": [
+    {
+      "tool": "privacy.scan_and_redact",
+      "args": {
+        "chars": 88
+      },
+      "ok": true,
+      "error": null,
+      "duration_ms": 0.062
+    },
+    {
+      "tool": "llm.classify",
+      "args": {
+        "chars": 81
+      },
+      "ok": true,
+      "error": null,
+      "duration_ms": 1534.137
+    }
+  ],
+  "llm_calls": [
+    {
+      "node": "planner",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 362,
+      "output_tokens": 76,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 2142.053,
+      "usd_cost": 0.000742
+    },
+    {
+      "node": "executor",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 473,
+      "output_tokens": 53,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 1534.088,
+      "usd_cost": 0.000738
+    },
+    {
+      "node": "verifier",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 345,
+      "output_tokens": 8,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 1125.633,
+      "usd_cost": 0.000385
+    }
+  ],
+  "llm_tokens_total": 1317,
+  "llm_cache_read_tokens_total": 0,
+  "llm_cache_hit_ratio": 0.0,
+  "usd_cost_total": 0.001865,
+  "guardrail_events": [
+    {
+      "node": "planner",
+      "kind": "pii_redaction",
+      "detail": "redacted 1 item(s): phone"
+    }
+  ],
+  "errors": [],
+  "decision": {
+    "outcome": "accepted",
+    "category": "account",
+    "priority": "high",
+    "reason": "audit passed; classification produced"
+  }
+}

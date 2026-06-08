@@ -1,0 +1,247 @@
+{
+  "run_id": "baseline-t10-s0",
+  "started_at": "2026-06-08T08:50:40.263972+00:00",
+  "ended_at": "2026-06-08T08:50:45.298335+00:00",
+  "input_text": "My card 4111 1111 1111 1111 was charged for a plan I cancelled, refund asap.",
+  "total_duration_ms": 5023.835,
+  "nodes": [
+    {
+      "run_id": "baseline-t10-s0",
+      "node": "planner",
+      "started_at": "2026-06-08T08:50:40.269075+00:00",
+      "state_before": {
+        "run_id": "baseline-t10-s0",
+        "input_text": "My card 4111 1111 1111 1111 was charged for a plan I cancelled, refund asap.",
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "sanitized_text": "My card [CREDIT_CARD]was charged for a plan I cancelled, refund asap.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "Customer reports unauthorized charge after cancellation and requests immediate refund. This is a billing/payment issue requiring urgent investigation into cancellation status and charge reversal.",
+          "focus": [
+            "billing dispute",
+            "refund request",
+            "cancelled subscription status",
+            "urgency - financial impact",
+            "charge reversal verification needed"
+          ]
+        },
+        "errors": []
+      },
+      "duration_ms": 1624.816,
+      "ended_at": "2026-06-08T08:50:41.893933+00:00"
+    },
+    {
+      "run_id": "baseline-t10-s0",
+      "node": "executor",
+      "started_at": "2026-06-08T08:50:41.895178+00:00",
+      "state_before": {
+        "run_id": "baseline-t10-s0",
+        "input_text": "My card 4111 1111 1111 1111 was charged for a plan I cancelled, refund asap.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "Customer reports unauthorized charge after cancellation and requests immediate refund. This is a billing/payment issue requiring urgent investigation into cancellation status and charge reversal.",
+          "focus": [
+            "billing dispute",
+            "refund request",
+            "cancelled subscription status",
+            "urgency - financial impact",
+            "charge reversal verification needed"
+          ]
+        },
+        "sanitized_text": "My card [CREDIT_CARD]was charged for a plan I cancelled, refund asap.",
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "classification": {
+          "category": "billing",
+          "priority": "high",
+          "reason": "Customer reports unauthorized charge after cancellation and requests urgent refund, indicating financial impact requiring immediate resolution.",
+          "confidence": 0.95,
+          "source": "llm"
+        },
+        "errors": []
+      },
+      "duration_ms": 2524.146,
+      "ended_at": "2026-06-08T08:50:44.419389+00:00"
+    },
+    {
+      "run_id": "baseline-t10-s0",
+      "node": "verifier",
+      "started_at": "2026-06-08T08:50:44.421220+00:00",
+      "state_before": {
+        "run_id": "baseline-t10-s0",
+        "input_text": "My card 4111 1111 1111 1111 was charged for a plan I cancelled, refund asap.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "Customer reports unauthorized charge after cancellation and requests immediate refund. This is a billing/payment issue requiring urgent investigation into cancellation status and charge reversal.",
+          "focus": [
+            "billing dispute",
+            "refund request",
+            "cancelled subscription status",
+            "urgency - financial impact",
+            "charge reversal verification needed"
+          ]
+        },
+        "sanitized_text": "My card [CREDIT_CARD]was charged for a plan I cancelled, refund asap.",
+        "classification": {
+          "category": "billing",
+          "priority": "high",
+          "reason": "Customer reports unauthorized charge after cancellation and requests urgent refund, indicating financial impact requiring immediate resolution.",
+          "confidence": 0.95,
+          "source": "llm"
+        },
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "audit": {
+          "passed": true,
+          "issues": [],
+          "pii_findings": []
+        }
+      },
+      "duration_ms": 874.859,
+      "ended_at": "2026-06-08T08:50:45.296152+00:00"
+    },
+    {
+      "run_id": "baseline-t10-s0",
+      "node": "finalizer",
+      "started_at": "2026-06-08T08:50:45.297516+00:00",
+      "state_before": {
+        "run_id": "baseline-t10-s0",
+        "input_text": "My card 4111 1111 1111 1111 was charged for a plan I cancelled, refund asap.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "Customer reports unauthorized charge after cancellation and requests immediate refund. This is a billing/payment issue requiring urgent investigation into cancellation status and charge reversal.",
+          "focus": [
+            "billing dispute",
+            "refund request",
+            "cancelled subscription status",
+            "urgency - financial impact",
+            "charge reversal verification needed"
+          ]
+        },
+        "sanitized_text": "My card [CREDIT_CARD]was charged for a plan I cancelled, refund asap.",
+        "classification": {
+          "category": "billing",
+          "priority": "high",
+          "reason": "Customer reports unauthorized charge after cancellation and requests urgent refund, indicating financial impact requiring immediate resolution.",
+          "confidence": 0.95,
+          "source": "llm"
+        },
+        "audit": {
+          "passed": true,
+          "issues": [],
+          "pii_findings": []
+        },
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "decision": {
+          "outcome": "accepted",
+          "category": "billing",
+          "priority": "high",
+          "reason": "audit passed; classification produced"
+        }
+      },
+      "duration_ms": 0.014,
+      "ended_at": "2026-06-08T08:50:45.297585+00:00"
+    }
+  ],
+  "tool_calls": [
+    {
+      "tool": "privacy.scan_and_redact",
+      "args": {
+        "chars": 76
+      },
+      "ok": true,
+      "error": null,
+      "duration_ms": 0.067
+    },
+    {
+      "tool": "llm.classify",
+      "args": {
+        "chars": 69
+      },
+      "ok": true,
+      "error": null,
+      "duration_ms": 2524.099
+    }
+  ],
+  "llm_calls": [
+    {
+      "node": "planner",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 357,
+      "output_tokens": 72,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 1624.634,
+      "usd_cost": 0.000717
+    },
+    {
+      "node": "executor",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 469,
+      "output_tokens": 47,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 2524.054,
+      "usd_cost": 0.000704
+    },
+    {
+      "node": "verifier",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 340,
+      "output_tokens": 8,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 874.719,
+      "usd_cost": 0.00038
+    }
+  ],
+  "llm_tokens_total": 1293,
+  "llm_cache_read_tokens_total": 0,
+  "llm_cache_hit_ratio": 0.0,
+  "usd_cost_total": 0.001801,
+  "guardrail_events": [
+    {
+      "node": "planner",
+      "kind": "pii_redaction",
+      "detail": "redacted 1 item(s): credit_card"
+    }
+  ],
+  "errors": [],
+  "decision": {
+    "outcome": "accepted",
+    "category": "billing",
+    "priority": "high",
+    "reason": "audit passed; classification produced"
+  }
+}

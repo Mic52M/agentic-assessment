@@ -1,0 +1,247 @@
+{
+  "run_id": "fault_slow-t05-s0",
+  "started_at": "2026-06-08T08:47:53.962766+00:00",
+  "ended_at": "2026-06-08T08:48:01.540643+00:00",
+  "input_text": "I'm locked out of my account and the reset email never comes. Call me at +39 02 1234567.",
+  "total_duration_ms": 7568.35,
+  "nodes": [
+    {
+      "run_id": "fault_slow-t05-s0",
+      "node": "planner",
+      "started_at": "2026-06-08T08:47:53.967423+00:00",
+      "state_before": {
+        "run_id": "fault_slow-t05-s0",
+        "input_text": "I'm locked out of my account and the reset email never comes. Call me at +39 02 1234567.",
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "sanitized_text": "I'm locked out of my account and the reset email never comes. Call me at [PHONE].",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "Customer is unable to access their account and password reset is failing. This requires immediate account recovery assistance to restore access.",
+          "focus": [
+            "account access/lockout",
+            "password reset failure",
+            "customer provided contact number for callback",
+            "high urgency - complete service unavailability",
+            "may need identity verification before account recovery"
+          ]
+        },
+        "errors": []
+      },
+      "duration_ms": 4363.982,
+      "ended_at": "2026-06-08T08:47:58.331479+00:00"
+    },
+    {
+      "run_id": "fault_slow-t05-s0",
+      "node": "executor",
+      "started_at": "2026-06-08T08:47:58.332670+00:00",
+      "state_before": {
+        "run_id": "fault_slow-t05-s0",
+        "input_text": "I'm locked out of my account and the reset email never comes. Call me at +39 02 1234567.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "Customer is unable to access their account and password reset is failing. This requires immediate account recovery assistance to restore access.",
+          "focus": [
+            "account access/lockout",
+            "password reset failure",
+            "customer provided contact number for callback",
+            "high urgency - complete service unavailability",
+            "may need identity verification before account recovery"
+          ]
+        },
+        "sanitized_text": "I'm locked out of my account and the reset email never comes. Call me at [PHONE].",
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "classification": {
+          "category": "account",
+          "priority": "high",
+          "reason": "Customer cannot access their account due to failed password reset, causing complete service unavailability and requiring urgent identity verification and recovery.",
+          "confidence": 0.95,
+          "source": "llm"
+        },
+        "errors": []
+      },
+      "duration_ms": 2290.174,
+      "ended_at": "2026-06-08T08:48:00.622906+00:00"
+    },
+    {
+      "run_id": "fault_slow-t05-s0",
+      "node": "verifier",
+      "started_at": "2026-06-08T08:48:00.624105+00:00",
+      "state_before": {
+        "run_id": "fault_slow-t05-s0",
+        "input_text": "I'm locked out of my account and the reset email never comes. Call me at +39 02 1234567.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "Customer is unable to access their account and password reset is failing. This requires immediate account recovery assistance to restore access.",
+          "focus": [
+            "account access/lockout",
+            "password reset failure",
+            "customer provided contact number for callback",
+            "high urgency - complete service unavailability",
+            "may need identity verification before account recovery"
+          ]
+        },
+        "sanitized_text": "I'm locked out of my account and the reset email never comes. Call me at [PHONE].",
+        "classification": {
+          "category": "account",
+          "priority": "high",
+          "reason": "Customer cannot access their account due to failed password reset, causing complete service unavailability and requiring urgent identity verification and recovery.",
+          "confidence": 0.95,
+          "source": "llm"
+        },
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "audit": {
+          "passed": true,
+          "issues": [],
+          "pii_findings": []
+        }
+      },
+      "duration_ms": 914.172,
+      "ended_at": "2026-06-08T08:48:01.538323+00:00"
+    },
+    {
+      "run_id": "fault_slow-t05-s0",
+      "node": "finalizer",
+      "started_at": "2026-06-08T08:48:01.539871+00:00",
+      "state_before": {
+        "run_id": "fault_slow-t05-s0",
+        "input_text": "I'm locked out of my account and the reset email never comes. Call me at +39 02 1234567.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "Customer is unable to access their account and password reset is failing. This requires immediate account recovery assistance to restore access.",
+          "focus": [
+            "account access/lockout",
+            "password reset failure",
+            "customer provided contact number for callback",
+            "high urgency - complete service unavailability",
+            "may need identity verification before account recovery"
+          ]
+        },
+        "sanitized_text": "I'm locked out of my account and the reset email never comes. Call me at [PHONE].",
+        "classification": {
+          "category": "account",
+          "priority": "high",
+          "reason": "Customer cannot access their account due to failed password reset, causing complete service unavailability and requiring urgent identity verification and recovery.",
+          "confidence": 0.95,
+          "source": "llm"
+        },
+        "audit": {
+          "passed": true,
+          "issues": [],
+          "pii_findings": []
+        },
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "decision": {
+          "outcome": "accepted",
+          "category": "account",
+          "priority": "high",
+          "reason": "audit passed; classification produced"
+        }
+      },
+      "duration_ms": 0.022,
+      "ended_at": "2026-06-08T08:48:01.539968+00:00"
+    }
+  ],
+  "tool_calls": [
+    {
+      "tool": "privacy.scan_and_redact",
+      "args": {
+        "chars": 88
+      },
+      "ok": true,
+      "error": null,
+      "duration_ms": 0.063
+    },
+    {
+      "tool": "llm.classify",
+      "args": {
+        "chars": 81
+      },
+      "ok": true,
+      "error": null,
+      "duration_ms": 2290.135
+    }
+  ],
+  "llm_calls": [
+    {
+      "node": "planner",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 356,
+      "output_tokens": 71,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 4363.807,
+      "usd_cost": 0.000711
+    },
+    {
+      "node": "executor",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 480,
+      "output_tokens": 52,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 2266.261,
+      "usd_cost": 0.00074
+    },
+    {
+      "node": "verifier",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 339,
+      "output_tokens": 8,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 914.04,
+      "usd_cost": 0.000379
+    }
+  ],
+  "llm_tokens_total": 1306,
+  "llm_cache_read_tokens_total": 0,
+  "llm_cache_hit_ratio": 0.0,
+  "usd_cost_total": 0.00183,
+  "guardrail_events": [
+    {
+      "node": "planner",
+      "kind": "pii_redaction",
+      "detail": "redacted 1 item(s): phone"
+    }
+  ],
+  "errors": [],
+  "decision": {
+    "outcome": "accepted",
+    "category": "account",
+    "priority": "high",
+    "reason": "audit passed; classification produced"
+  }
+}

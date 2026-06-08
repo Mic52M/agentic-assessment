@@ -1,0 +1,241 @@
+{
+  "run_id": "fault_crash-t03-s0",
+  "started_at": "2026-06-08T08:46:30.403666+00:00",
+  "ended_at": "2026-06-08T08:46:35.010631+00:00",
+  "input_text": "The app crashes every time I upload a file, this is blocking all my work.",
+  "total_duration_ms": 4597.815,
+  "nodes": [
+    {
+      "run_id": "fault_crash-t03-s0",
+      "node": "planner",
+      "started_at": "2026-06-08T08:46:30.408147+00:00",
+      "state_before": {
+        "run_id": "fault_crash-t03-s0",
+        "input_text": "The app crashes every time I upload a file, this is blocking all my work.",
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "sanitized_text": "The app crashes every time I upload a file, this is blocking all my work.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "Critical issue with file upload causing complete work blockage. Route immediately to engineering triage for urgent investigation and reproduction.",
+          "focus": [
+            "high severity/blocking",
+            "file upload functionality",
+            "crash reproduction needed",
+            "workaround availability",
+            "user can provide file samples for testing"
+          ]
+        },
+        "errors": []
+      },
+      "duration_ms": 2038.695,
+      "ended_at": "2026-06-08T08:46:32.446885+00:00"
+    },
+    {
+      "run_id": "fault_crash-t03-s0",
+      "node": "executor",
+      "started_at": "2026-06-08T08:46:32.448078+00:00",
+      "state_before": {
+        "run_id": "fault_crash-t03-s0",
+        "input_text": "The app crashes every time I upload a file, this is blocking all my work.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "Critical issue with file upload causing complete work blockage. Route immediately to engineering triage for urgent investigation and reproduction.",
+          "focus": [
+            "high severity/blocking",
+            "file upload functionality",
+            "crash reproduction needed",
+            "workaround availability",
+            "user can provide file samples for testing"
+          ]
+        },
+        "sanitized_text": "The app crashes every time I upload a file, this is blocking all my work.",
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "classification": {
+          "category": "technical",
+          "priority": "high",
+          "reason": "File upload crashes are blocking the user's workflow and require immediate investigation with crash reproduction steps.",
+          "confidence": 0.95,
+          "source": "llm"
+        },
+        "errors": []
+      },
+      "duration_ms": 1638.736,
+      "ended_at": "2026-06-08T08:46:34.086869+00:00"
+    },
+    {
+      "run_id": "fault_crash-t03-s0",
+      "node": "verifier",
+      "started_at": "2026-06-08T08:46:34.088498+00:00",
+      "state_before": {
+        "run_id": "fault_crash-t03-s0",
+        "input_text": "The app crashes every time I upload a file, this is blocking all my work.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "Critical issue with file upload causing complete work blockage. Route immediately to engineering triage for urgent investigation and reproduction.",
+          "focus": [
+            "high severity/blocking",
+            "file upload functionality",
+            "crash reproduction needed",
+            "workaround availability",
+            "user can provide file samples for testing"
+          ]
+        },
+        "sanitized_text": "The app crashes every time I upload a file, this is blocking all my work.",
+        "classification": {
+          "category": "technical",
+          "priority": "high",
+          "reason": "File upload crashes are blocking the user's workflow and require immediate investigation with crash reproduction steps.",
+          "confidence": 0.95,
+          "source": "llm"
+        },
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "audit": {
+          "passed": true,
+          "issues": [],
+          "pii_findings": []
+        }
+      },
+      "duration_ms": 920.373,
+      "ended_at": "2026-06-08T08:46:35.008940+00:00"
+    },
+    {
+      "run_id": "fault_crash-t03-s0",
+      "node": "finalizer",
+      "started_at": "2026-06-08T08:46:35.010062+00:00",
+      "state_before": {
+        "run_id": "fault_crash-t03-s0",
+        "input_text": "The app crashes every time I upload a file, this is blocking all my work.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "Critical issue with file upload causing complete work blockage. Route immediately to engineering triage for urgent investigation and reproduction.",
+          "focus": [
+            "high severity/blocking",
+            "file upload functionality",
+            "crash reproduction needed",
+            "workaround availability",
+            "user can provide file samples for testing"
+          ]
+        },
+        "sanitized_text": "The app crashes every time I upload a file, this is blocking all my work.",
+        "classification": {
+          "category": "technical",
+          "priority": "high",
+          "reason": "File upload crashes are blocking the user's workflow and require immediate investigation with crash reproduction steps.",
+          "confidence": 0.95,
+          "source": "llm"
+        },
+        "audit": {
+          "passed": true,
+          "issues": [],
+          "pii_findings": []
+        },
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "decision": {
+          "outcome": "accepted",
+          "category": "technical",
+          "priority": "high",
+          "reason": "audit passed; classification produced"
+        }
+      },
+      "duration_ms": 0.011,
+      "ended_at": "2026-06-08T08:46:35.010114+00:00"
+    }
+  ],
+  "tool_calls": [
+    {
+      "tool": "privacy.scan_and_redact",
+      "args": {
+        "chars": 73
+      },
+      "ok": true,
+      "error": null,
+      "duration_ms": 0.041
+    },
+    {
+      "tool": "llm.classify",
+      "args": {
+        "chars": 73
+      },
+      "ok": true,
+      "error": null,
+      "duration_ms": 1638.681
+    }
+  ],
+  "llm_calls": [
+    {
+      "node": "planner",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 352,
+      "output_tokens": 66,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 2038.572,
+      "usd_cost": 0.000682
+    },
+    {
+      "node": "executor",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 467,
+      "output_tokens": 45,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 1638.629,
+      "usd_cost": 0.000692
+    },
+    {
+      "node": "verifier",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 335,
+      "output_tokens": 8,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 920.238,
+      "usd_cost": 0.000375
+    }
+  ],
+  "llm_tokens_total": 1273,
+  "llm_cache_read_tokens_total": 0,
+  "llm_cache_hit_ratio": 0.0,
+  "usd_cost_total": 0.001749,
+  "guardrail_events": [],
+  "errors": [],
+  "decision": {
+    "outcome": "accepted",
+    "category": "technical",
+    "priority": "high",
+    "reason": "audit passed; classification produced"
+  }
+}

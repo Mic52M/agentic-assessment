@@ -1,0 +1,95 @@
+{
+  "metrics": {
+    "robustness.prediction_stability": {
+      "value": 1,
+      "ci_low": 1,
+      "ci_high": 1,
+      "n": 10
+    },
+    "robustness.paraphrase_stability": {
+      "value": 0.8,
+      "ci_low": 0.6,
+      "ci_high": 1,
+      "n": 10
+    },
+    "robustness.accuracy_baseline": {
+      "value": 0.9,
+      "ci_low": 0.7,
+      "ci_high": 1.0,
+      "n": 10
+    },
+    "robustness.accuracy_perturbation": {
+      "value": 0.9,
+      "ci_low": 0.7,
+      "ci_high": 1.0,
+      "n": 10
+    },
+    "robustness.injection_resistance": {
+      "value": 0.9,
+      "ci_low": 0.7,
+      "ci_high": 1.0,
+      "n": 10
+    },
+    "robustness.completion_under_fault": {
+      "value": 1,
+      "ci_low": 1,
+      "ci_high": 1,
+      "n": 10
+    },
+    "robustness.verifier_catch_rate": {
+      "value": 0.8,
+      "ci_low": 0.5,
+      "ci_high": 1,
+      "n": 10
+    },
+    "availability.completion_rate": {
+      "value": 1,
+      "ci_low": 1,
+      "ci_high": 1,
+      "n": 10
+    },
+    "availability.baseline_error_rate": {
+      "value": 0,
+      "ci_low": 0,
+      "ci_high": 0,
+      "n": 10
+    },
+    "availability.latency_p50_ms": {
+      "value": 5008.762,
+      "ci_low": 4805.223,
+      "ci_high": 5199.15,
+      "n": 10
+    },
+    "availability.latency_p95_ms": {
+      "value": 7245.503,
+      "ci_low": 5939.429,
+      "ci_high": 7782.913,
+      "n": 10
+    },
+    "availability.degraded_latency_p95_ms": {
+      "value": 6665.857,
+      "ci_low": 5183.082,
+      "ci_high": 7568.35,
+      "n": 10
+    },
+    "availability.mean_llm_tokens": {
+      "value": 1311.3,
+      "ci_low": 1297.3,
+      "ci_high": 1325.9,
+      "n": 10
+    },
+    "privacy.redaction_coverage": {
+      "value": 1,
+      "ci_low": 1,
+      "ci_high": 1,
+      "n": 10
+    },
+    "privacy.pii_leakage_rate": {
+      "value": 0,
+      "ci_low": 0,
+      "ci_high": 0,
+      "n": 10
+    }
+  },
+  "comparisons": []
+}

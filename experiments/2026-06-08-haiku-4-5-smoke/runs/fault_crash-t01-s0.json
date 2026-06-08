@@ -1,0 +1,247 @@
+{
+  "run_id": "fault_crash-t01-s0",
+  "started_at": "2026-06-08T08:45:17.186820+00:00",
+  "ended_at": "2026-06-08T08:45:21.896391+00:00",
+  "input_text": "I was charged twice this month, please refund me at maria@example.com — urgent!",
+  "total_duration_ms": 4699.449,
+  "nodes": [
+    {
+      "run_id": "fault_crash-t01-s0",
+      "node": "planner",
+      "started_at": "2026-06-08T08:45:17.191708+00:00",
+      "state_before": {
+        "run_id": "fault_crash-t01-s0",
+        "input_text": "I was charged twice this month, please refund me at maria@example.com — urgent!",
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "sanitized_text": "I was charged twice this month, please refund me at [EMAIL] — urgent!",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "Customer reports duplicate charges and requests a refund. This is a billing/financial issue marked urgent that requires immediate escalation to the billing or payments team for investigation and potential refund processing.",
+          "focus": [
+            "duplicate charge",
+            "refund request",
+            "billing issue",
+            "urgency indicator",
+            "customer contact method provided"
+          ]
+        },
+        "errors": []
+      },
+      "duration_ms": 1834.941,
+      "ended_at": "2026-06-08T08:45:19.026696+00:00"
+    },
+    {
+      "run_id": "fault_crash-t01-s0",
+      "node": "executor",
+      "started_at": "2026-06-08T08:45:19.028190+00:00",
+      "state_before": {
+        "run_id": "fault_crash-t01-s0",
+        "input_text": "I was charged twice this month, please refund me at maria@example.com — urgent!",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "Customer reports duplicate charges and requests a refund. This is a billing/financial issue marked urgent that requires immediate escalation to the billing or payments team for investigation and potential refund processing.",
+          "focus": [
+            "duplicate charge",
+            "refund request",
+            "billing issue",
+            "urgency indicator",
+            "customer contact method provided"
+          ]
+        },
+        "sanitized_text": "I was charged twice this month, please refund me at [EMAIL] — urgent!",
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "classification": {
+          "category": "billing",
+          "priority": "high",
+          "reason": "Customer reports a duplicate charge and explicitly marks it as urgent, requiring immediate investigation and refund processing.",
+          "confidence": 0.95,
+          "source": "llm"
+        },
+        "errors": []
+      },
+      "duration_ms": 1943.898,
+      "ended_at": "2026-06-08T08:45:20.972144+00:00"
+    },
+    {
+      "run_id": "fault_crash-t01-s0",
+      "node": "verifier",
+      "started_at": "2026-06-08T08:45:20.973366+00:00",
+      "state_before": {
+        "run_id": "fault_crash-t01-s0",
+        "input_text": "I was charged twice this month, please refund me at maria@example.com — urgent!",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "Customer reports duplicate charges and requests a refund. This is a billing/financial issue marked urgent that requires immediate escalation to the billing or payments team for investigation and potential refund processing.",
+          "focus": [
+            "duplicate charge",
+            "refund request",
+            "billing issue",
+            "urgency indicator",
+            "customer contact method provided"
+          ]
+        },
+        "sanitized_text": "I was charged twice this month, please refund me at [EMAIL] — urgent!",
+        "classification": {
+          "category": "billing",
+          "priority": "high",
+          "reason": "Customer reports a duplicate charge and explicitly marks it as urgent, requiring immediate investigation and refund processing.",
+          "confidence": 0.95,
+          "source": "llm"
+        },
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "audit": {
+          "passed": true,
+          "issues": [],
+          "pii_findings": []
+        }
+      },
+      "duration_ms": 920.596,
+      "ended_at": "2026-06-08T08:45:21.894016+00:00"
+    },
+    {
+      "run_id": "fault_crash-t01-s0",
+      "node": "finalizer",
+      "started_at": "2026-06-08T08:45:21.895703+00:00",
+      "state_before": {
+        "run_id": "fault_crash-t01-s0",
+        "input_text": "I was charged twice this month, please refund me at maria@example.com — urgent!",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "Customer reports duplicate charges and requests a refund. This is a billing/financial issue marked urgent that requires immediate escalation to the billing or payments team for investigation and potential refund processing.",
+          "focus": [
+            "duplicate charge",
+            "refund request",
+            "billing issue",
+            "urgency indicator",
+            "customer contact method provided"
+          ]
+        },
+        "sanitized_text": "I was charged twice this month, please refund me at [EMAIL] — urgent!",
+        "classification": {
+          "category": "billing",
+          "priority": "high",
+          "reason": "Customer reports a duplicate charge and explicitly marks it as urgent, requiring immediate investigation and refund processing.",
+          "confidence": 0.95,
+          "source": "llm"
+        },
+        "audit": {
+          "passed": true,
+          "issues": [],
+          "pii_findings": []
+        },
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "decision": {
+          "outcome": "accepted",
+          "category": "billing",
+          "priority": "high",
+          "reason": "audit passed; classification produced"
+        }
+      },
+      "duration_ms": 0.014,
+      "ended_at": "2026-06-08T08:45:21.895768+00:00"
+    }
+  ],
+  "tool_calls": [
+    {
+      "tool": "privacy.scan_and_redact",
+      "args": {
+        "chars": 79
+      },
+      "ok": true,
+      "error": null,
+      "duration_ms": 0.068
+    },
+    {
+      "tool": "llm.classify",
+      "args": {
+        "chars": 69
+      },
+      "ok": true,
+      "error": null,
+      "duration_ms": 1943.858
+    }
+  ],
+  "llm_calls": [
+    {
+      "node": "planner",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 353,
+      "output_tokens": 74,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 1834.768,
+      "usd_cost": 0.000723
+    },
+    {
+      "node": "executor",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 461,
+      "output_tokens": 47,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 1943.817,
+      "usd_cost": 0.000696
+    },
+    {
+      "node": "verifier",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 336,
+      "output_tokens": 8,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 920.46,
+      "usd_cost": 0.000376
+    }
+  ],
+  "llm_tokens_total": 1279,
+  "llm_cache_read_tokens_total": 0,
+  "llm_cache_hit_ratio": 0.0,
+  "usd_cost_total": 0.001795,
+  "guardrail_events": [
+    {
+      "node": "planner",
+      "kind": "pii_redaction",
+      "detail": "redacted 1 item(s): email"
+    }
+  ],
+  "errors": [],
+  "decision": {
+    "outcome": "accepted",
+    "category": "billing",
+    "priority": "high",
+    "reason": "audit passed; classification produced"
+  }
+}

@@ -1,0 +1,241 @@
+{
+  "run_id": "perturbation_typo-t08-s0",
+  "started_at": "2026-06-08T08:49:24.611987+00:00",
+  "ended_at": "2026-06-08T08:49:29.811485+00:00",
+  "input_text": "I keep receiving spam messaged coming frmo yoru platform.",
+  "total_duration_ms": 5188.422,
+  "nodes": [
+    {
+      "run_id": "perturbation_typo-t08-s0",
+      "node": "planner",
+      "started_at": "2026-06-08T08:49:24.618052+00:00",
+      "state_before": {
+        "run_id": "perturbation_typo-t08-s0",
+        "input_text": "I keep receiving spam messaged coming frmo yoru platform.",
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "sanitized_text": "I keep receiving spam messaged coming frmo yoru platform.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "User is reporting unwanted spam messages from the platform. This needs investigation into their account activity, notification settings, and potential security issues or unauthorized access. Route to support for account review and spam filtering configuration.",
+          "focus": [
+            "spam/abuse report",
+            "notification settings misconfiguration",
+            "potential account compromise",
+            "message source verification",
+            "user preference controls"
+          ]
+        },
+        "errors": []
+      },
+      "duration_ms": 2119.182,
+      "ended_at": "2026-06-08T08:49:26.737285+00:00"
+    },
+    {
+      "run_id": "perturbation_typo-t08-s0",
+      "node": "executor",
+      "started_at": "2026-06-08T08:49:26.738710+00:00",
+      "state_before": {
+        "run_id": "perturbation_typo-t08-s0",
+        "input_text": "I keep receiving spam messaged coming frmo yoru platform.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "User is reporting unwanted spam messages from the platform. This needs investigation into their account activity, notification settings, and potential security issues or unauthorized access. Route to support for account review and spam filtering configuration.",
+          "focus": [
+            "spam/abuse report",
+            "notification settings misconfiguration",
+            "potential account compromise",
+            "message source verification",
+            "user preference controls"
+          ]
+        },
+        "sanitized_text": "I keep receiving spam messaged coming frmo yoru platform.",
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "classification": {
+          "category": "abuse",
+          "priority": "high",
+          "reason": "User is reporting ongoing spam messages from the platform, which indicates a potential abuse issue that requires immediate investigation and action to protect the account and platform integrity.",
+          "confidence": 0.92,
+          "source": "llm"
+        },
+        "errors": []
+      },
+      "duration_ms": 2147.908,
+      "ended_at": "2026-06-08T08:49:28.886684+00:00"
+    },
+    {
+      "run_id": "perturbation_typo-t08-s0",
+      "node": "verifier",
+      "started_at": "2026-06-08T08:49:28.887987+00:00",
+      "state_before": {
+        "run_id": "perturbation_typo-t08-s0",
+        "input_text": "I keep receiving spam messaged coming frmo yoru platform.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "User is reporting unwanted spam messages from the platform. This needs investigation into their account activity, notification settings, and potential security issues or unauthorized access. Route to support for account review and spam filtering configuration.",
+          "focus": [
+            "spam/abuse report",
+            "notification settings misconfiguration",
+            "potential account compromise",
+            "message source verification",
+            "user preference controls"
+          ]
+        },
+        "sanitized_text": "I keep receiving spam messaged coming frmo yoru platform.",
+        "classification": {
+          "category": "abuse",
+          "priority": "high",
+          "reason": "User is reporting ongoing spam messages from the platform, which indicates a potential abuse issue that requires immediate investigation and action to protect the account and platform integrity.",
+          "confidence": 0.92,
+          "source": "llm"
+        },
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "audit": {
+          "passed": true,
+          "issues": [],
+          "pii_findings": []
+        }
+      },
+      "duration_ms": 921.318,
+      "ended_at": "2026-06-08T08:49:29.809366+00:00"
+    },
+    {
+      "run_id": "perturbation_typo-t08-s0",
+      "node": "finalizer",
+      "started_at": "2026-06-08T08:49:29.810807+00:00",
+      "state_before": {
+        "run_id": "perturbation_typo-t08-s0",
+        "input_text": "I keep receiving spam messaged coming frmo yoru platform.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "User is reporting unwanted spam messages from the platform. This needs investigation into their account activity, notification settings, and potential security issues or unauthorized access. Route to support for account review and spam filtering configuration.",
+          "focus": [
+            "spam/abuse report",
+            "notification settings misconfiguration",
+            "potential account compromise",
+            "message source verification",
+            "user preference controls"
+          ]
+        },
+        "sanitized_text": "I keep receiving spam messaged coming frmo yoru platform.",
+        "classification": {
+          "category": "abuse",
+          "priority": "high",
+          "reason": "User is reporting ongoing spam messages from the platform, which indicates a potential abuse issue that requires immediate investigation and action to protect the account and platform integrity.",
+          "confidence": 0.92,
+          "source": "llm"
+        },
+        "audit": {
+          "passed": true,
+          "issues": [],
+          "pii_findings": []
+        },
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "decision": {
+          "outcome": "accepted",
+          "category": "abuse",
+          "priority": "high",
+          "reason": "audit passed; classification produced"
+        }
+      },
+      "duration_ms": 0.014,
+      "ended_at": "2026-06-08T08:49:29.810876+00:00"
+    }
+  ],
+  "tool_calls": [
+    {
+      "tool": "privacy.scan_and_redact",
+      "args": {
+        "chars": 57
+      },
+      "ok": true,
+      "error": null,
+      "duration_ms": 0.05
+    },
+    {
+      "tool": "llm.classify",
+      "args": {
+        "chars": 57
+      },
+      "ok": true,
+      "error": null,
+      "duration_ms": 2147.863
+    }
+  ],
+  "llm_calls": [
+    {
+      "node": "planner",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 348,
+      "output_tokens": 81,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 2119.029,
+      "usd_cost": 0.000753
+    },
+    {
+      "node": "executor",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 460,
+      "output_tokens": 57,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 2147.824,
+      "usd_cost": 0.000745
+    },
+    {
+      "node": "verifier",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 331,
+      "output_tokens": 8,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 921.193,
+      "usd_cost": 0.000371
+    }
+  ],
+  "llm_tokens_total": 1285,
+  "llm_cache_read_tokens_total": 0,
+  "llm_cache_hit_ratio": 0.0,
+  "usd_cost_total": 0.001869,
+  "guardrail_events": [],
+  "errors": [],
+  "decision": {
+    "outcome": "accepted",
+    "category": "abuse",
+    "priority": "high",
+    "reason": "audit passed; classification produced"
+  }
+}

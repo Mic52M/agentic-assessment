@@ -1,0 +1,233 @@
+{
+  "run_id": "baseline-t06-s0",
+  "started_at": "2026-06-08T08:48:06.561435+00:00",
+  "ended_at": "2026-06-08T08:48:10.757110+00:00",
+  "input_text": "How do I change my username? Just a quick question.",
+  "total_duration_ms": 4186.507,
+  "nodes": [
+    {
+      "run_id": "baseline-t06-s0",
+      "node": "planner",
+      "started_at": "2026-06-08T08:48:06.565955+00:00",
+      "state_before": {
+        "run_id": "baseline-t06-s0",
+        "input_text": "How do I change my username? Just a quick question.",
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "sanitized_text": "How do I change my username? Just a quick question.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "This is a straightforward account management question requesting username change instructions. Route to account settings documentation or provide direct guidance on the username change process.",
+          "focus": [
+            "account management",
+            "simple self-service request",
+            "no urgency or error indicated"
+          ]
+        },
+        "errors": []
+      },
+      "duration_ms": 1461.263,
+      "ended_at": "2026-06-08T08:48:08.027255+00:00"
+    },
+    {
+      "run_id": "baseline-t06-s0",
+      "node": "executor",
+      "started_at": "2026-06-08T08:48:08.028443+00:00",
+      "state_before": {
+        "run_id": "baseline-t06-s0",
+        "input_text": "How do I change my username? Just a quick question.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "This is a straightforward account management question requesting username change instructions. Route to account settings documentation or provide direct guidance on the username change process.",
+          "focus": [
+            "account management",
+            "simple self-service request",
+            "no urgency or error indicated"
+          ]
+        },
+        "sanitized_text": "How do I change my username? Just a quick question.",
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "classification": {
+          "category": "account",
+          "priority": "low",
+          "reason": "This is a straightforward account management question about username changes with no urgency indicated.",
+          "confidence": 0.95,
+          "source": "llm"
+        },
+        "errors": []
+      },
+      "duration_ms": 1600.493,
+      "ended_at": "2026-06-08T08:48:09.628990+00:00"
+    },
+    {
+      "run_id": "baseline-t06-s0",
+      "node": "verifier",
+      "started_at": "2026-06-08T08:48:09.630465+00:00",
+      "state_before": {
+        "run_id": "baseline-t06-s0",
+        "input_text": "How do I change my username? Just a quick question.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "This is a straightforward account management question requesting username change instructions. Route to account settings documentation or provide direct guidance on the username change process.",
+          "focus": [
+            "account management",
+            "simple self-service request",
+            "no urgency or error indicated"
+          ]
+        },
+        "sanitized_text": "How do I change my username? Just a quick question.",
+        "classification": {
+          "category": "account",
+          "priority": "low",
+          "reason": "This is a straightforward account management question about username changes with no urgency indicated.",
+          "confidence": 0.95,
+          "source": "llm"
+        },
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "audit": {
+          "passed": true,
+          "issues": [],
+          "pii_findings": []
+        }
+      },
+      "duration_ms": 1124.737,
+      "ended_at": "2026-06-08T08:48:10.755259+00:00"
+    },
+    {
+      "run_id": "baseline-t06-s0",
+      "node": "finalizer",
+      "started_at": "2026-06-08T08:48:10.756439+00:00",
+      "state_before": {
+        "run_id": "baseline-t06-s0",
+        "input_text": "How do I change my username? Just a quick question.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "This is a straightforward account management question requesting username change instructions. Route to account settings documentation or provide direct guidance on the username change process.",
+          "focus": [
+            "account management",
+            "simple self-service request",
+            "no urgency or error indicated"
+          ]
+        },
+        "sanitized_text": "How do I change my username? Just a quick question.",
+        "classification": {
+          "category": "account",
+          "priority": "low",
+          "reason": "This is a straightforward account management question about username changes with no urgency indicated.",
+          "confidence": 0.95,
+          "source": "llm"
+        },
+        "audit": {
+          "passed": true,
+          "issues": [],
+          "pii_findings": []
+        },
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "decision": {
+          "outcome": "accepted",
+          "category": "account",
+          "priority": "low",
+          "reason": "audit passed; classification produced"
+        }
+      },
+      "duration_ms": 0.014,
+      "ended_at": "2026-06-08T08:48:10.756503+00:00"
+    }
+  ],
+  "tool_calls": [
+    {
+      "tool": "privacy.scan_and_redact",
+      "args": {
+        "chars": 51
+      },
+      "ok": true,
+      "error": null,
+      "duration_ms": 0.034
+    },
+    {
+      "tool": "llm.classify",
+      "args": {
+        "chars": 51
+      },
+      "ok": true,
+      "error": null,
+      "duration_ms": 1600.434
+    }
+  ],
+  "llm_calls": [
+    {
+      "node": "planner",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 347,
+      "output_tokens": 59,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 1461.123,
+      "usd_cost": 0.000642
+    },
+    {
+      "node": "executor",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 452,
+      "output_tokens": 44,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 1600.378,
+      "usd_cost": 0.000672
+    },
+    {
+      "node": "verifier",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 330,
+      "output_tokens": 8,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 1124.622,
+      "usd_cost": 0.00037
+    }
+  ],
+  "llm_tokens_total": 1240,
+  "llm_cache_read_tokens_total": 0,
+  "llm_cache_hit_ratio": 0.0,
+  "usd_cost_total": 0.001684,
+  "guardrail_events": [],
+  "errors": [],
+  "decision": {
+    "outcome": "accepted",
+    "category": "account",
+    "priority": "low",
+    "reason": "audit passed; classification produced"
+  }
+}

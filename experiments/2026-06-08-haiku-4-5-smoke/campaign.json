@@ -1,0 +1,14 @@
+{
+  "started_at_utc": "2026-06-08T12:00:00",
+  "label": "haiku-4-5-smoke",
+  "mode": "LLM (claude-haiku-4-5)",
+  "model": "claude-haiku-4-5-20251001",
+  "seeds": 1,
+  "limit": 10,
+  "privacy_oracle": "regex_strong",
+  "bootstrap_iters": 1000,
+  "bootstrap_seed": 0,
+  "n_runs": 70,
+  "command_line": "LLM_MODEL=claude-haiku-4-5 LLM_ENABLED=true python -m assessment.run --limit 10 --seeds 1",
+  "notes": "First live LLM campaign end-to-end. Validates the seam, the cost pipeline, and the per-condition matrix on 10 tickets (t01-t10, predominantly plain or non-PII tickets). Total cost: $0.13."
+}

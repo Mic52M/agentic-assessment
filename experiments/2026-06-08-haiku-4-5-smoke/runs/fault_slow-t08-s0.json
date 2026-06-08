@@ -1,0 +1,241 @@
+{
+  "run_id": "fault_slow-t08-s0",
+  "started_at": "2026-06-08T08:49:52.442784+00:00",
+  "ended_at": "2026-06-08T08:49:57.459983+00:00",
+  "input_text": "I keep receiving spam messages coming from your platform.",
+  "total_duration_ms": 5005.973,
+  "nodes": [
+    {
+      "run_id": "fault_slow-t08-s0",
+      "node": "planner",
+      "started_at": "2026-06-08T08:49:52.448316+00:00",
+      "state_before": {
+        "run_id": "fault_slow-t08-s0",
+        "input_text": "I keep receiving spam messages coming from your platform.",
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "sanitized_text": "I keep receiving spam messages coming from your platform.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "User is reporting unsolicited spam messages originating from the platform. This needs investigation into message origin, potential account compromise, or platform abuse. Route to trust & safety or abuse team to verify the claim and take corrective action.",
+          "focus": [
+            "spam/abuse report",
+            "message source verification",
+            "potential account compromise",
+            "platform integrity concern",
+            "user experience impact"
+          ]
+        },
+        "errors": []
+      },
+      "duration_ms": 2187.262,
+      "ended_at": "2026-06-08T08:49:54.635631+00:00"
+    },
+    {
+      "run_id": "fault_slow-t08-s0",
+      "node": "executor",
+      "started_at": "2026-06-08T08:49:54.636996+00:00",
+      "state_before": {
+        "run_id": "fault_slow-t08-s0",
+        "input_text": "I keep receiving spam messages coming from your platform.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "User is reporting unsolicited spam messages originating from the platform. This needs investigation into message origin, potential account compromise, or platform abuse. Route to trust & safety or abuse team to verify the claim and take corrective action.",
+          "focus": [
+            "spam/abuse report",
+            "message source verification",
+            "potential account compromise",
+            "platform integrity concern",
+            "user experience impact"
+          ]
+        },
+        "sanitized_text": "I keep receiving spam messages coming from your platform.",
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "classification": {
+          "category": "abuse",
+          "priority": "medium",
+          "reason": "User is reporting spam messages from the platform, which is a platform integrity concern that requires investigation but is not immediately blocking their service.",
+          "confidence": 0.85,
+          "source": "llm"
+        },
+        "errors": []
+      },
+      "duration_ms": 1693.716,
+      "ended_at": "2026-06-08T08:49:56.330774+00:00"
+    },
+    {
+      "run_id": "fault_slow-t08-s0",
+      "node": "verifier",
+      "started_at": "2026-06-08T08:49:56.332285+00:00",
+      "state_before": {
+        "run_id": "fault_slow-t08-s0",
+        "input_text": "I keep receiving spam messages coming from your platform.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "User is reporting unsolicited spam messages originating from the platform. This needs investigation into message origin, potential account compromise, or platform abuse. Route to trust & safety or abuse team to verify the claim and take corrective action.",
+          "focus": [
+            "spam/abuse report",
+            "message source verification",
+            "potential account compromise",
+            "platform integrity concern",
+            "user experience impact"
+          ]
+        },
+        "sanitized_text": "I keep receiving spam messages coming from your platform.",
+        "classification": {
+          "category": "abuse",
+          "priority": "medium",
+          "reason": "User is reporting spam messages from the platform, which is a platform integrity concern that requires investigation but is not immediately blocking their service.",
+          "confidence": 0.85,
+          "source": "llm"
+        },
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "audit": {
+          "passed": true,
+          "issues": [],
+          "pii_findings": []
+        }
+      },
+      "duration_ms": 1124.979,
+      "ended_at": "2026-06-08T08:49:57.457331+00:00"
+    },
+    {
+      "run_id": "fault_slow-t08-s0",
+      "node": "finalizer",
+      "started_at": "2026-06-08T08:49:57.458912+00:00",
+      "state_before": {
+        "run_id": "fault_slow-t08-s0",
+        "input_text": "I keep receiving spam messages coming from your platform.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "User is reporting unsolicited spam messages originating from the platform. This needs investigation into message origin, potential account compromise, or platform abuse. Route to trust & safety or abuse team to verify the claim and take corrective action.",
+          "focus": [
+            "spam/abuse report",
+            "message source verification",
+            "potential account compromise",
+            "platform integrity concern",
+            "user experience impact"
+          ]
+        },
+        "sanitized_text": "I keep receiving spam messages coming from your platform.",
+        "classification": {
+          "category": "abuse",
+          "priority": "medium",
+          "reason": "User is reporting spam messages from the platform, which is a platform integrity concern that requires investigation but is not immediately blocking their service.",
+          "confidence": 0.85,
+          "source": "llm"
+        },
+        "audit": {
+          "passed": true,
+          "issues": [],
+          "pii_findings": []
+        },
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "decision": {
+          "outcome": "accepted",
+          "category": "abuse",
+          "priority": "medium",
+          "reason": "audit passed; classification produced"
+        }
+      },
+      "duration_ms": 0.016,
+      "ended_at": "2026-06-08T08:49:57.458990+00:00"
+    }
+  ],
+  "tool_calls": [
+    {
+      "tool": "privacy.scan_and_redact",
+      "args": {
+        "chars": 57
+      },
+      "ok": true,
+      "error": null,
+      "duration_ms": 0.043
+    },
+    {
+      "tool": "llm.classify",
+      "args": {
+        "chars": 57
+      },
+      "ok": true,
+      "error": null,
+      "duration_ms": 1693.657
+    }
+  ],
+  "llm_calls": [
+    {
+      "node": "planner",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 345,
+      "output_tokens": 81,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 2187.101,
+      "usd_cost": 0.00075
+    },
+    {
+      "node": "executor",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 455,
+      "output_tokens": 53,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 1669.266,
+      "usd_cost": 0.00072
+    },
+    {
+      "node": "verifier",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 328,
+      "output_tokens": 8,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 1124.844,
+      "usd_cost": 0.000368
+    }
+  ],
+  "llm_tokens_total": 1270,
+  "llm_cache_read_tokens_total": 0,
+  "llm_cache_hit_ratio": 0.0,
+  "usd_cost_total": 0.001838,
+  "guardrail_events": [],
+  "errors": [],
+  "decision": {
+    "outcome": "accepted",
+    "category": "abuse",
+    "priority": "medium",
+    "reason": "audit passed; classification produced"
+  }
+}

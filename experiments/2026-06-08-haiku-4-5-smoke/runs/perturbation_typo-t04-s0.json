@@ -1,0 +1,241 @@
+{
+  "run_id": "perturbation_typo-t04-s0",
+  "started_at": "2026-06-08T08:46:50.068380+00:00",
+  "ended_at": "2026-06-08T08:46:55.431496+00:00",
+  "input_text": "There is a minor typo on the setyings page, ujst eltting you kmow.",
+  "total_duration_ms": 5353.276,
+  "nodes": [
+    {
+      "run_id": "perturbation_typo-t04-s0",
+      "node": "planner",
+      "started_at": "2026-06-08T08:46:50.073187+00:00",
+      "state_before": {
+        "run_id": "perturbation_typo-t04-s0",
+        "input_text": "There is a minor typo on the setyings page, ujst eltting you kmow.",
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "sanitized_text": "There is a minor typo on the setyings page, ujst eltting you kmow.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "User is reporting a minor typo on the settings page. This is a low-priority bug report that should be routed to the product or engineering team for documentation/UI correction.",
+          "focus": [
+            "typo/UI text error",
+            "settings page location",
+            "low urgency",
+            "does not impact functionality",
+            "documentation/cosmetic fix"
+          ]
+        },
+        "errors": []
+      },
+      "duration_ms": 2445.642,
+      "ended_at": "2026-06-08T08:46:52.518879+00:00"
+    },
+    {
+      "run_id": "perturbation_typo-t04-s0",
+      "node": "executor",
+      "started_at": "2026-06-08T08:46:52.520235+00:00",
+      "state_before": {
+        "run_id": "perturbation_typo-t04-s0",
+        "input_text": "There is a minor typo on the setyings page, ujst eltting you kmow.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "User is reporting a minor typo on the settings page. This is a low-priority bug report that should be routed to the product or engineering team for documentation/UI correction.",
+          "focus": [
+            "typo/UI text error",
+            "settings page location",
+            "low urgency",
+            "does not impact functionality",
+            "documentation/cosmetic fix"
+          ]
+        },
+        "sanitized_text": "There is a minor typo on the setyings page, ujst eltting you kmow.",
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "classification": {
+          "category": "other",
+          "priority": "low",
+          "reason": "This is a cosmetic typo report in UI text that does not impact functionality and requires only a documentation or text correction.",
+          "confidence": 0.95,
+          "source": "llm"
+        },
+        "errors": []
+      },
+      "duration_ms": 1518.414,
+      "ended_at": "2026-06-08T08:46:54.038708+00:00"
+    },
+    {
+      "run_id": "perturbation_typo-t04-s0",
+      "node": "verifier",
+      "started_at": "2026-06-08T08:46:54.040090+00:00",
+      "state_before": {
+        "run_id": "perturbation_typo-t04-s0",
+        "input_text": "There is a minor typo on the setyings page, ujst eltting you kmow.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "User is reporting a minor typo on the settings page. This is a low-priority bug report that should be routed to the product or engineering team for documentation/UI correction.",
+          "focus": [
+            "typo/UI text error",
+            "settings page location",
+            "low urgency",
+            "does not impact functionality",
+            "documentation/cosmetic fix"
+          ]
+        },
+        "sanitized_text": "There is a minor typo on the setyings page, ujst eltting you kmow.",
+        "classification": {
+          "category": "other",
+          "priority": "low",
+          "reason": "This is a cosmetic typo report in UI text that does not impact functionality and requires only a documentation or text correction.",
+          "confidence": 0.95,
+          "source": "llm"
+        },
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "audit": {
+          "passed": true,
+          "issues": [],
+          "pii_findings": []
+        }
+      },
+      "duration_ms": 1389.2,
+      "ended_at": "2026-06-08T08:46:55.429349+00:00"
+    },
+    {
+      "run_id": "perturbation_typo-t04-s0",
+      "node": "finalizer",
+      "started_at": "2026-06-08T08:46:55.430786+00:00",
+      "state_before": {
+        "run_id": "perturbation_typo-t04-s0",
+        "input_text": "There is a minor typo on the setyings page, ujst eltting you kmow.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "User is reporting a minor typo on the settings page. This is a low-priority bug report that should be routed to the product or engineering team for documentation/UI correction.",
+          "focus": [
+            "typo/UI text error",
+            "settings page location",
+            "low urgency",
+            "does not impact functionality",
+            "documentation/cosmetic fix"
+          ]
+        },
+        "sanitized_text": "There is a minor typo on the setyings page, ujst eltting you kmow.",
+        "classification": {
+          "category": "other",
+          "priority": "low",
+          "reason": "This is a cosmetic typo report in UI text that does not impact functionality and requires only a documentation or text correction.",
+          "confidence": 0.95,
+          "source": "llm"
+        },
+        "audit": {
+          "passed": true,
+          "issues": [],
+          "pii_findings": []
+        },
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "decision": {
+          "outcome": "accepted",
+          "category": "other",
+          "priority": "low",
+          "reason": "audit passed; classification produced"
+        }
+      },
+      "duration_ms": 0.02,
+      "ended_at": "2026-06-08T08:46:55.430873+00:00"
+    }
+  ],
+  "tool_calls": [
+    {
+      "tool": "privacy.scan_and_redact",
+      "args": {
+        "chars": 66
+      },
+      "ok": true,
+      "error": null,
+      "duration_ms": 0.043
+    },
+    {
+      "tool": "llm.classify",
+      "args": {
+        "chars": 66
+      },
+      "ok": true,
+      "error": null,
+      "duration_ms": 1518.355
+    }
+  ],
+  "llm_calls": [
+    {
+      "node": "planner",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 357,
+      "output_tokens": 80,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 2445.516,
+      "usd_cost": 0.000757
+    },
+    {
+      "node": "executor",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 472,
+      "output_tokens": 52,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 1518.295,
+      "usd_cost": 0.000732
+    },
+    {
+      "node": "verifier",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 340,
+      "output_tokens": 8,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 1389.07,
+      "usd_cost": 0.00038
+    }
+  ],
+  "llm_tokens_total": 1309,
+  "llm_cache_read_tokens_total": 0,
+  "llm_cache_hit_ratio": 0.0,
+  "usd_cost_total": 0.001869,
+  "guardrail_events": [],
+  "errors": [],
+  "decision": {
+    "outcome": "accepted",
+    "category": "other",
+    "priority": "low",
+    "reason": "audit passed; classification produced"
+  }
+}

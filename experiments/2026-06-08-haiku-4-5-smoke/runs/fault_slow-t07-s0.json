@@ -1,0 +1,241 @@
+{
+  "run_id": "fault_slow-t07-s0",
+  "started_at": "2026-06-08T08:49:07.077135+00:00",
+  "ended_at": "2026-06-08T08:49:11.787355+00:00",
+  "input_text": "Someone is impersonating your support team and phishing our users right now.",
+  "total_duration_ms": 4698.136,
+  "nodes": [
+    {
+      "run_id": "fault_slow-t07-s0",
+      "node": "planner",
+      "started_at": "2026-06-08T08:49:07.084446+00:00",
+      "state_before": {
+        "run_id": "fault_slow-t07-s0",
+        "input_text": "Someone is impersonating your support team and phishing our users right now.",
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "sanitized_text": "Someone is impersonating your support team and phishing our users right now.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "This is a critical security incident requiring immediate escalation. The reporter is claiming active phishing attacks using impersonation of the support team, which poses an urgent threat to user safety and company reputation.",
+          "focus": [
+            "security incident severity and urgency",
+            "evidence of active phishing campaign",
+            "scope of affected users",
+            "request for immediate action vs. informational report",
+            "verification of reporter's legitimacy"
+          ]
+        },
+        "errors": []
+      },
+      "duration_ms": 2141.988,
+      "ended_at": "2026-06-08T08:49:09.226488+00:00"
+    },
+    {
+      "run_id": "fault_slow-t07-s0",
+      "node": "executor",
+      "started_at": "2026-06-08T08:49:09.227882+00:00",
+      "state_before": {
+        "run_id": "fault_slow-t07-s0",
+        "input_text": "Someone is impersonating your support team and phishing our users right now.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "This is a critical security incident requiring immediate escalation. The reporter is claiming active phishing attacks using impersonation of the support team, which poses an urgent threat to user safety and company reputation.",
+          "focus": [
+            "security incident severity and urgency",
+            "evidence of active phishing campaign",
+            "scope of affected users",
+            "request for immediate action vs. informational report",
+            "verification of reporter's legitimacy"
+          ]
+        },
+        "sanitized_text": "Someone is impersonating your support team and phishing our users right now.",
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "classification": {
+          "category": "abuse",
+          "priority": "high",
+          "reason": "Active phishing campaign impersonating support team requires immediate investigation and mitigation to prevent further user compromise.",
+          "confidence": 0.95,
+          "source": "llm"
+        },
+        "errors": []
+      },
+      "duration_ms": 1532.981,
+      "ended_at": "2026-06-08T08:49:10.760921+00:00"
+    },
+    {
+      "run_id": "fault_slow-t07-s0",
+      "node": "verifier",
+      "started_at": "2026-06-08T08:49:10.762204+00:00",
+      "state_before": {
+        "run_id": "fault_slow-t07-s0",
+        "input_text": "Someone is impersonating your support team and phishing our users right now.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "This is a critical security incident requiring immediate escalation. The reporter is claiming active phishing attacks using impersonation of the support team, which poses an urgent threat to user safety and company reputation.",
+          "focus": [
+            "security incident severity and urgency",
+            "evidence of active phishing campaign",
+            "scope of affected users",
+            "request for immediate action vs. informational report",
+            "verification of reporter's legitimacy"
+          ]
+        },
+        "sanitized_text": "Someone is impersonating your support team and phishing our users right now.",
+        "classification": {
+          "category": "abuse",
+          "priority": "high",
+          "reason": "Active phishing campaign impersonating support team requires immediate investigation and mitigation to prevent further user compromise.",
+          "confidence": 0.95,
+          "source": "llm"
+        },
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "audit": {
+          "passed": true,
+          "issues": [],
+          "pii_findings": []
+        }
+      },
+      "duration_ms": 1023.153,
+      "ended_at": "2026-06-08T08:49:11.785413+00:00"
+    },
+    {
+      "run_id": "fault_slow-t07-s0",
+      "node": "finalizer",
+      "started_at": "2026-06-08T08:49:11.786568+00:00",
+      "state_before": {
+        "run_id": "fault_slow-t07-s0",
+        "input_text": "Someone is impersonating your support team and phishing our users right now.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "This is a critical security incident requiring immediate escalation. The reporter is claiming active phishing attacks using impersonation of the support team, which poses an urgent threat to user safety and company reputation.",
+          "focus": [
+            "security incident severity and urgency",
+            "evidence of active phishing campaign",
+            "scope of affected users",
+            "request for immediate action vs. informational report",
+            "verification of reporter's legitimacy"
+          ]
+        },
+        "sanitized_text": "Someone is impersonating your support team and phishing our users right now.",
+        "classification": {
+          "category": "abuse",
+          "priority": "high",
+          "reason": "Active phishing campaign impersonating support team requires immediate investigation and mitigation to prevent further user compromise.",
+          "confidence": 0.95,
+          "source": "llm"
+        },
+        "audit": {
+          "passed": true,
+          "issues": [],
+          "pii_findings": []
+        },
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "decision": {
+          "outcome": "accepted",
+          "category": "abuse",
+          "priority": "high",
+          "reason": "audit passed; classification produced"
+        }
+      },
+      "duration_ms": 0.014,
+      "ended_at": "2026-06-08T08:49:11.786630+00:00"
+    }
+  ],
+  "tool_calls": [
+    {
+      "tool": "privacy.scan_and_redact",
+      "args": {
+        "chars": 76
+      },
+      "ok": true,
+      "error": null,
+      "duration_ms": 0.047
+    },
+    {
+      "tool": "llm.classify",
+      "args": {
+        "chars": 76
+      },
+      "ok": true,
+      "error": null,
+      "duration_ms": 1532.934
+    }
+  ],
+  "llm_calls": [
+    {
+      "node": "planner",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 351,
+      "output_tokens": 93,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 2141.827,
+      "usd_cost": 0.000816
+    },
+    {
+      "node": "executor",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 476,
+      "output_tokens": 48,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 1507.813,
+      "usd_cost": 0.000716
+    },
+    {
+      "node": "verifier",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 334,
+      "output_tokens": 8,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 1023.027,
+      "usd_cost": 0.000374
+    }
+  ],
+  "llm_tokens_total": 1310,
+  "llm_cache_read_tokens_total": 0,
+  "llm_cache_hit_ratio": 0.0,
+  "usd_cost_total": 0.001906,
+  "guardrail_events": [],
+  "errors": [],
+  "decision": {
+    "outcome": "accepted",
+    "category": "abuse",
+    "priority": "high",
+    "reason": "audit passed; classification produced"
+  }
+}

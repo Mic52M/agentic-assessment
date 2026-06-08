@@ -187,6 +187,12 @@ python -m assessment.run --offline
 # quick smoke
 python -m assessment.run --offline --limit 5 --seeds 1
 
+# live on a specific model (Haiku is fast and cheap; default is Opus)
+LLM_MODEL=claude-haiku-4-5 python -m assessment.run --limit 10 --seeds 1
+
+# tag the output dir (recommended for campaigns you'll keep)
+python -m assessment.run --label haiku-4-5-smoke
+
 # pick a different privacy oracle
 python -m assessment.run --privacy-oracle presidio  # if installed
 
@@ -194,14 +200,27 @@ python -m assessment.run --privacy-oracle presidio  # if installed
 python -m assessment.run --bootstrap-iters 0
 ```
 
-A campaign runs every (ticket × seed × condition) and writes:
+Each campaign lands in a date-stamped subdirectory of `--out` (default
+`assessment_runs/`) so successive runs do not overwrite each other:
+
+```
+assessment_runs/2026-06-08T14-30-22/                 # auto timestamp
+assessment_runs/2026-06-08-haiku-4-5-smoke/          # with --label
+```
+
+The subdirectory contains:
 
 | File | Content |
 | --- | --- |
-| `assessment_runs/results.json` | one row per run (flat, machine-readable) |
-| `assessment_runs/metrics.json` | metrics (value, CI low/high, n) + comparisons (Δ, p-value, n) |
-| `assessment_runs/runs/` | the full orchestrator traces |
-| `assessment_runs/report.html` | verdicts, comparisons, per-condition breakdown |
+| `campaign.json` | metadata: timestamp, model, seeds, label, command line |
+| `results.json` | one row per run (flat, machine-readable) |
+| `metrics.json` | metrics (value, CI low/high, n) + comparisons (Δ, p-value, n) |
+| `runs/` | the full orchestrator traces |
+| `report.html` | verdicts, comparisons, per-condition breakdown |
+
+Campaigns worth preserving (e.g. those backing a published claim) live
+under `experiments/` in version control — see
+[`experiments/README.md`](experiments/README.md) for the convention.
 
 The default condition set is seven cells:
 
@@ -332,6 +351,7 @@ assessment/
 
 main.py              # single-ticket CLI
 tests/               # pytest suite (offline, deterministic)
+experiments/         # archived, date-labelled campaigns (version-controlled)
 docs/PROGRESS.md     # phase-by-phase technical change log
 architecture.md      # design rationale
 ```

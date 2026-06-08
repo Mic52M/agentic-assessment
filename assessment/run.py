@@ -1,15 +1,23 @@
 """CLI: run an assessment campaign end-to-end.
 
-    python -m assessment.run                 # full campaign (LLM if key set)
-    python -m assessment.run --offline       # force the free rule-based path
-    python -m assessment.run --limit 3 --seeds 1   # quick/cheap smoke campaign
+    python -m assessment.run                          # full campaign (LLM if key set)
+    python -m assessment.run --offline                # force the free rule-based path
+    python -m assessment.run --limit 3 --seeds 1      # quick/cheap smoke campaign
+    python -m assessment.run --label haiku-4-5-smoke  # tag the output dir
 
-Produces, under assessment_runs/:
+Every campaign goes into a date-stamped subdirectory of ``--out`` (default
+``assessment_runs/``) so successive runs do not overwrite each other:
+
+    assessment_runs/2026-06-08T14-30-22/                 # auto timestamp
+    assessment_runs/2026-06-08-haiku-4-5-smoke/          # with --label
+
+The subdirectory contains:
+
     runs/            per-run orchestrator traces
     results.json     raw ExperimentResults
-    metrics.json     computed metrics
+    metrics.json     computed metrics + paired comparisons
     report.html      verdicts + metrics (open in a browser)
-and prints the PASS/FAIL verdict table to stdout.
+    campaign.json    metadata (timestamp, model, seeds, label, command line)
 """
 
 from __future__ import annotations
@@ -18,6 +26,7 @@ import argparse
 import json
 import os
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
 
 
@@ -41,7 +50,23 @@ def _parse_args(argv: list[str]) -> argparse.Namespace:
         "--bootstrap-seed", type=int, default=0,
         help="seed for bootstrap + permutation tests (reproducibility)",
     )
+    p.add_argument(
+        "--label",
+        help="short tag appended to the date-stamped output subdirectory",
+    )
     return p.parse_args(argv)
+
+
+def _campaign_subdir(label: str | None) -> str:
+    """Build the per-campaign subdirectory name.
+
+    With a label: ``<YYYY-MM-DD>-<label>``.
+    Without:      ``<YYYY-MM-DDTHH-MM-SS>`` (UTC, colons replaced for FS safety).
+    """
+    now = datetime.now(timezone.utc)
+    if label:
+        return f"{now.strftime('%Y-%m-%d')}-{label}"
+    return now.strftime("%Y-%m-%dT%H-%M-%S")
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -75,7 +100,7 @@ def main(argv: list[str] | None = None) -> int:
         f"privacy_oracle={args.privacy_oracle}"
     )
 
-    out_dir = Path(args.out)
+    out_dir = Path(args.out) / _campaign_subdir(args.label)
     results, campaign_dir = run_campaign(
         seeds=args.seeds, limit=args.limit, out_dir=out_dir,
         privacy_oracle=args.privacy_oracle,
@@ -99,6 +124,21 @@ def main(argv: list[str] | None = None) -> int:
     payload = {"metrics": metrics_for_json,
                "comparisons": [dataclasses.asdict(c) for c in comparisons]}
     (campaign_dir / "metrics.json").write_text(json.dumps(payload, indent=2))
+
+    campaign_meta = {
+        "started_at_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "label": args.label,
+        "mode": mode,
+        "model": llm.current_model() if llm.is_available() else None,
+        "seeds": args.seeds,
+        "limit": args.limit,
+        "privacy_oracle": args.privacy_oracle,
+        "bootstrap_iters": args.bootstrap_iters,
+        "bootstrap_seed": args.bootstrap_seed,
+        "n_runs": len(results),
+        "command_line": " ".join(sys.argv),
+    }
+    (campaign_dir / "campaign.json").write_text(json.dumps(campaign_meta, indent=2))
     report_path = render_html(
         results, verdicts, campaign_dir / "report.html",
         mode=mode, metric_stats=metric_stats, comparisons=comparisons,

@@ -1,0 +1,247 @@
+{
+  "run_id": "perturbation_paraphrase-t10-s0",
+  "started_at": "2026-06-08T08:50:52.446466+00:00",
+  "ended_at": "2026-06-08T08:50:57.262640+00:00",
+  "input_text": "I need to request a refund urgently as my card 4111 1111 1111 1111 was incorrectly charged for a subscription that I had previously terminated.",
+  "total_duration_ms": 4804.265,
+  "nodes": [
+    {
+      "run_id": "perturbation_paraphrase-t10-s0",
+      "node": "planner",
+      "started_at": "2026-06-08T08:50:52.452753+00:00",
+      "state_before": {
+        "run_id": "perturbation_paraphrase-t10-s0",
+        "input_text": "I need to request a refund urgently as my card 4111 1111 1111 1111 was incorrectly charged for a subscription that I had previously terminated.",
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "sanitized_text": "I need to request a refund urgently as my card [CREDIT_CARD]was incorrectly charged for a subscription that I had previously terminated.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "This is an urgent billing issue involving an erroneous charge after subscription cancellation. Route to billing/payments team immediately for refund processing and verification of termination status.",
+          "focus": [
+            "urgent refund request",
+            "subscription already terminated",
+            "incorrect charge post-cancellation",
+            "payment verification needed",
+            "customer financial impact"
+          ]
+        },
+        "errors": []
+      },
+      "duration_ms": 2246.277,
+      "ended_at": "2026-06-08T08:50:54.699088+00:00"
+    },
+    {
+      "run_id": "perturbation_paraphrase-t10-s0",
+      "node": "executor",
+      "started_at": "2026-06-08T08:50:54.700865+00:00",
+      "state_before": {
+        "run_id": "perturbation_paraphrase-t10-s0",
+        "input_text": "I need to request a refund urgently as my card 4111 1111 1111 1111 was incorrectly charged for a subscription that I had previously terminated.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "This is an urgent billing issue involving an erroneous charge after subscription cancellation. Route to billing/payments team immediately for refund processing and verification of termination status.",
+          "focus": [
+            "urgent refund request",
+            "subscription already terminated",
+            "incorrect charge post-cancellation",
+            "payment verification needed",
+            "customer financial impact"
+          ]
+        },
+        "sanitized_text": "I need to request a refund urgently as my card [CREDIT_CARD]was incorrectly charged for a subscription that I had previously terminated.",
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "classification": {
+          "category": "billing",
+          "priority": "high",
+          "reason": "Urgent refund request for a charge made after subscription cancellation requires immediate investigation and resolution to address the customer's financial impact.",
+          "confidence": 0.95,
+          "source": "llm"
+        },
+        "errors": []
+      },
+      "duration_ms": 1233.223,
+      "ended_at": "2026-06-08T08:50:55.934142+00:00"
+    },
+    {
+      "run_id": "perturbation_paraphrase-t10-s0",
+      "node": "verifier",
+      "started_at": "2026-06-08T08:50:55.935692+00:00",
+      "state_before": {
+        "run_id": "perturbation_paraphrase-t10-s0",
+        "input_text": "I need to request a refund urgently as my card 4111 1111 1111 1111 was incorrectly charged for a subscription that I had previously terminated.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "This is an urgent billing issue involving an erroneous charge after subscription cancellation. Route to billing/payments team immediately for refund processing and verification of termination status.",
+          "focus": [
+            "urgent refund request",
+            "subscription already terminated",
+            "incorrect charge post-cancellation",
+            "payment verification needed",
+            "customer financial impact"
+          ]
+        },
+        "sanitized_text": "I need to request a refund urgently as my card [CREDIT_CARD]was incorrectly charged for a subscription that I had previously terminated.",
+        "classification": {
+          "category": "billing",
+          "priority": "high",
+          "reason": "Urgent refund request for a charge made after subscription cancellation requires immediate investigation and resolution to address the customer's financial impact.",
+          "confidence": 0.95,
+          "source": "llm"
+        },
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "audit": {
+          "passed": true,
+          "issues": [],
+          "pii_findings": []
+        }
+      },
+      "duration_ms": 1324.751,
+      "ended_at": "2026-06-08T08:50:57.260518+00:00"
+    },
+    {
+      "run_id": "perturbation_paraphrase-t10-s0",
+      "node": "finalizer",
+      "started_at": "2026-06-08T08:50:57.261843+00:00",
+      "state_before": {
+        "run_id": "perturbation_paraphrase-t10-s0",
+        "input_text": "I need to request a refund urgently as my card 4111 1111 1111 1111 was incorrectly charged for a subscription that I had previously terminated.",
+        "plan": {
+          "steps": [
+            "sanitize",
+            "classify",
+            "audit",
+            "decide"
+          ],
+          "rationale": "This is an urgent billing issue involving an erroneous charge after subscription cancellation. Route to billing/payments team immediately for refund processing and verification of termination status.",
+          "focus": [
+            "urgent refund request",
+            "subscription already terminated",
+            "incorrect charge post-cancellation",
+            "payment verification needed",
+            "customer financial impact"
+          ]
+        },
+        "sanitized_text": "I need to request a refund urgently as my card [CREDIT_CARD]was incorrectly charged for a subscription that I had previously terminated.",
+        "classification": {
+          "category": "billing",
+          "priority": "high",
+          "reason": "Urgent refund request for a charge made after subscription cancellation requires immediate investigation and resolution to address the customer's financial impact.",
+          "confidence": 0.95,
+          "source": "llm"
+        },
+        "audit": {
+          "passed": true,
+          "issues": [],
+          "pii_findings": []
+        },
+        "errors": []
+      },
+      "status": "ok",
+      "error": null,
+      "output": {
+        "decision": {
+          "outcome": "accepted",
+          "category": "billing",
+          "priority": "high",
+          "reason": "audit passed; classification produced"
+        }
+      },
+      "duration_ms": 0.014,
+      "ended_at": "2026-06-08T08:50:57.261910+00:00"
+    }
+  ],
+  "tool_calls": [
+    {
+      "tool": "privacy.scan_and_redact",
+      "args": {
+        "chars": 143
+      },
+      "ok": true,
+      "error": null,
+      "duration_ms": 0.089
+    },
+    {
+      "tool": "llm.classify",
+      "args": {
+        "chars": 136
+      },
+      "ok": true,
+      "error": null,
+      "duration_ms": 1233.163
+    }
+  ],
+  "llm_calls": [
+    {
+      "node": "planner",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 368,
+      "output_tokens": 76,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 2246.073,
+      "usd_cost": 0.000748
+    },
+    {
+      "node": "executor",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 481,
+      "output_tokens": 53,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 1233.109,
+      "usd_cost": 0.000746
+    },
+    {
+      "node": "verifier",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 351,
+      "output_tokens": 8,
+      "cache_read_input_tokens": 0,
+      "duration_ms": 1324.578,
+      "usd_cost": 0.000391
+    }
+  ],
+  "llm_tokens_total": 1337,
+  "llm_cache_read_tokens_total": 0,
+  "llm_cache_hit_ratio": 0.0,
+  "usd_cost_total": 0.001885,
+  "guardrail_events": [
+    {
+      "node": "planner",
+      "kind": "pii_redaction",
+      "detail": "redacted 1 item(s): credit_card"
+    }
+  ],
+  "errors": [],
+  "decision": {
+    "outcome": "accepted",
+    "category": "billing",
+    "priority": "high",
+    "reason": "audit passed; classification produced"
+  }
+}

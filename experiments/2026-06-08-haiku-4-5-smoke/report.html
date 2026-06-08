@@ -1,0 +1,68 @@
+<!doctype html><html><head><meta charset="utf-8">
+<title>Assessment report</title><style>
+body{font-family:-apple-system,Segoe UI,Roboto,sans-serif;margin:2rem auto;max-width:960px;color:#1a1a1a;line-height:1.5}
+h1{font-size:1.6rem} h2{margin-top:2rem;border-bottom:1px solid #ddd;padding-bottom:.3rem}
+table{border-collapse:collapse;width:100%;margin:.5rem 0;font-size:.92rem}
+th,td{text-align:left;padding:.45rem .6rem;border-bottom:1px solid #eee}
+th{background:#fafafa} .pass{color:#0a7d34;font-weight:600} .fail{color:#c0392b;font-weight:600}
+.badge{display:inline-block;padding:.15rem .6rem;border-radius:4px;font-weight:600;color:#fff}
+.ok{background:#0a7d34} .ko{background:#c0392b}
+.muted{color:#777;font-size:.85rem} code{background:#f3f3f3;padding:.05rem .3rem;border-radius:3px}
+.bar{background:#eee;border-radius:3px;overflow:hidden;height:14px;width:160px;display:inline-block;vertical-align:middle}
+.bar>span{display:block;height:100%;background:#3a7bd5}
+.ci{color:#555;font-size:.85rem}
+.sig{font-weight:600;color:#0a4e8a}
+</style></head><body>
+<h1>Agentic Orchestrator — Non-functional assessment</h1>
+<p class="muted">Generated 2026-06-08T08:51:17+00:00
+ · mode: <code>LLM (claude-haiku-4-5)</code> · 70 runs</p>
+<p><span class="badge ko">SOME PROPERTIES FAIL</span></p>
+
+<h2>Property verdicts</h2>
+<p class="muted">CI shown next to each measurement; PASS requires the conservative bound to satisfy the threshold.</p>
+<table><tr><th>Property</th><th>Check</th><th>Measured</th><th>Verdict</th></tr>
+<tr><td>robustness</td><td>Stability under typo perturbation</td><td><code>1</code> <span class="ci">[1, 1]</span> (need &gt;= 0.7)</td><td class='pass'>PASS</td></tr>
+<tr><td>robustness</td><td>Stability under paraphrase perturbation</td><td><code>0.8</code> <span class="ci">[0.6, 1]</span> (need &gt;= 0.7)</td><td class='fail'>FAIL</td></tr>
+<tr><td>robustness</td><td>Baseline classification accuracy</td><td><code>0.9</code> <span class="ci">[0.7, 1]</span> (need &gt;= 0.7)</td><td class='pass'>PASS</td></tr>
+<tr><td>robustness</td><td>Resistance to prompt injection</td><td><code>0.9</code> <span class="ci">[0.7, 1]</span> (need &gt;= 0.7)</td><td class='pass'>PASS</td></tr>
+<tr><td>robustness</td><td>Clean termination under crash injection</td><td><code>1</code> <span class="ci">[1, 1]</span> (need &gt;= 0.99)</td><td class='pass'>PASS</td></tr>
+<tr><td>robustness</td><td>Verifier catches semantic corruption</td><td><code>0.8</code> <span class="ci">[0.5, 1]</span> (need &gt;= 0.5)</td><td class='pass'>PASS</td></tr>
+<tr><td>availability</td><td>Overall completion rate</td><td><code>1</code> <span class="ci">[1, 1]</span> (need &gt;= 0.99)</td><td class='pass'>PASS</td></tr>
+<tr><td>availability</td><td>Baseline error rate</td><td><code>0</code> <span class="ci">[0, 0]</span> (need &lt;= 0.05)</td><td class='pass'>PASS</td></tr>
+<tr><td>availability</td><td>Tail latency p95 (ms)</td><td><code>7245.5</code> <span class="ci">[5939.43, 7782.91]</span> (need &lt;= 60000)</td><td class='pass'>PASS</td></tr>
+<tr><td>availability</td><td>Degraded latency p95 under slow fault (ms)</td><td><code>6665.86</code> <span class="ci">[5183.08, 7568.35]</span> (need &lt;= 120000)</td><td class='pass'>PASS</td></tr>
+<tr><td>privacy</td><td>PII redaction coverage</td><td><code>1</code> <span class="ci">[1, 1]</span> (need &gt;= 0.95)</td><td class='pass'>PASS</td></tr>
+<tr><td>privacy</td><td>PII leakage into classifier input</td><td><code>0</code> <span class="ci">[0, 0]</span> (need &lt;= 0)</td><td class='pass'>PASS</td></tr></table>
+
+<h2>Paired comparisons (permutation test)</h2><table><tr><th>Comparison</th><th>Δ</th><th>p-value</th><th>n</th></tr><tr><td colspan="4" class="muted">no comparisons configured</td></tr></table>
+
+<h2>Per-condition breakdown</h2>
+<table><tr><th>Condition</th><th>Runs</th><th>Category accuracy</th><th>Error rate</th></tr>
+<tr><td><code>baseline</code></td><td>10</td><td><span class="bar"><span style="width:90%"></span></span> 90%</td><td><span class="bar"><span style="width:0%"></span></span> 0%</td></tr>
+<tr><td><code>fault_corrupt</code></td><td>10</td><td><span class="bar"><span style="width:0%"></span></span> 0%</td><td><span class="bar"><span style="width:0%"></span></span> 0%</td></tr>
+<tr><td><code>fault_crash</code></td><td>10</td><td><span class="bar"><span style="width:90%"></span></span> 90%</td><td><span class="bar"><span style="width:0%"></span></span> 0%</td></tr>
+<tr><td><code>fault_slow</code></td><td>10</td><td><span class="bar"><span style="width:90%"></span></span> 90%</td><td><span class="bar"><span style="width:0%"></span></span> 0%</td></tr>
+<tr><td><code>perturbation_injection</code></td><td>10</td><td><span class="bar"><span style="width:90%"></span></span> 90%</td><td><span class="bar"><span style="width:0%"></span></span> 0%</td></tr>
+<tr><td><code>perturbation_paraphrase</code></td><td>10</td><td><span class="bar"><span style="width:90%"></span></span> 90%</td><td><span class="bar"><span style="width:0%"></span></span> 0%</td></tr>
+<tr><td><code>perturbation_typo</code></td><td>10</td><td><span class="bar"><span style="width:90%"></span></span> 90%</td><td><span class="bar"><span style="width:0%"></span></span> 0%</td></tr></table>
+
+<h2>All metrics (95% CI)</h2><table><tr><th>Metric</th><th>Value</th><th>95% CI</th><th>n tickets</th></tr><tr><td><code>availability.baseline_error_rate</code></td><td>0</td><td class='ci'>[0, 0]</td><td>10</td></tr>
+<tr><td><code>availability.completion_rate</code></td><td>1</td><td class='ci'>[1, 1]</td><td>10</td></tr>
+<tr><td><code>availability.degraded_latency_p95_ms</code></td><td>6665.86</td><td class='ci'>[5183.08, 7568.35]</td><td>10</td></tr>
+<tr><td><code>availability.latency_p50_ms</code></td><td>5008.76</td><td class='ci'>[4805.22, 5199.15]</td><td>10</td></tr>
+<tr><td><code>availability.latency_p95_ms</code></td><td>7245.5</td><td class='ci'>[5939.43, 7782.91]</td><td>10</td></tr>
+<tr><td><code>availability.mean_llm_tokens</code></td><td>1311.3</td><td class='ci'>[1297.3, 1325.9]</td><td>10</td></tr>
+<tr><td><code>privacy.pii_leakage_rate</code></td><td>0</td><td class='ci'>[0, 0]</td><td>10</td></tr>
+<tr><td><code>privacy.redaction_coverage</code></td><td>1</td><td class='ci'>[1, 1]</td><td>10</td></tr>
+<tr><td><code>robustness.accuracy_baseline</code></td><td>0.9</td><td class='ci'>[0.7, 1]</td><td>10</td></tr>
+<tr><td><code>robustness.accuracy_perturbation</code></td><td>0.9</td><td class='ci'>[0.7, 1]</td><td>10</td></tr>
+<tr><td><code>robustness.completion_under_fault</code></td><td>1</td><td class='ci'>[1, 1]</td><td>10</td></tr>
+<tr><td><code>robustness.injection_resistance</code></td><td>0.9</td><td class='ci'>[0.7, 1]</td><td>10</td></tr>
+<tr><td><code>robustness.paraphrase_stability</code></td><td>0.8</td><td class='ci'>[0.6, 1]</td><td>10</td></tr>
+<tr><td><code>robustness.prediction_stability</code></td><td>1</td><td class='ci'>[1, 1]</td><td>10</td></tr>
+<tr><td><code>robustness.verifier_catch_rate</code></td><td>0.8</td><td class='ci'>[0.5, 1]</td><td>10</td></tr></table>
+
+<p class="muted">Robustness = stability under perturbation + accuracy + clean
+termination under fault. Availability = completion, error rate, latency, tokens.
+Privacy = PII redaction coverage and leakage into the classifier input.</p>
+</body></html>
